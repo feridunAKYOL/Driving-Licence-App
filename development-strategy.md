@@ -1,7 +1,7 @@
 # User Stories
 
 - A user can overview a sample tutorial, and can see overview of the page (who isn't logged in).
-- A user can sign up.
+- A user can sign .
 - A user can log in.
 - A user can log out.
 - If a user forget his/her password he can reset his password (he will be asked some special questions to reset).
@@ -30,4 +30,4 @@
   - how many registered students are there ? 
   - how much success do get the students in the tests?
 - in the administrator page there will be 2 parts. one is for access the sources. So he can add , change or delete. The other for the statistics of the students.
->>>>>>> Stashed changes
+- fdsfsdfdfds

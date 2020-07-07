@@ -34,7 +34,7 @@ __FRONTEND__
 * Home page needs
     * Responsive website
     __Header__
-    * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`, `user name div`)
+    * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`)
     __Main Section__
     * ...
     __Footer__
@@ -99,10 +99,14 @@ __BACKEND__
 
 ## 7. User Story: User Page 
 
-* As an registered user can see a page specialized for him.
+* As an registered user can see a page specialized for him after logged in.
 
 Ideas about what the page should have..
 - user can get reading materials/resources.
+- user can take practice test
+- user can enroll for test
+- user can take exam
+- user can write comment/questions/feedback
 
 ## 8. User Story: Admin Page 
 
@@ -117,6 +121,7 @@ Ideas about what the page should have..
 - Expert/Admin/Administrator/Teacher can add/update/delete questions
 - Expert/Admin/Administrator/Teacher can add/update/delete answers
 - Expert/Admin/Administrator/Teacher can view test results
+- Expert/Admin/Administrator/Teacher can grant user to take re-exam
 
 ## 9. User Story: Test Page
 
@@ -149,21 +154,21 @@ Ideas about what the page should have..
 ## 12. User Story: Comments
 
 * A registered user can add comment and see all the comments.
-
+* A registered user with admin/expert role can reply to comment/feedbacks.
 Ideas about what the page should have..
 - user can post comment, question, feedback
 
-## 13. User Story: Add Materials
+## 13. User Story: Add Tutorial Materials
 
-* A registered user can add questions and tutorials.
+* A registered user with admin/expert role can add practice test questions and tutorials.
 
-## 14. User Story: Update Materials
+## 14. User Story: Update Tutorial Materials
 
-* A registered user can update questions and tutorials.
+* A registered user with admin/expert role can update practice test questions and tutorials.
 
-## 15. User Story: Delete Materials
+## 15. User Story: Delete Tutorial Materials
 
-* A registered user can delete questions and tutorials.
+* A registered user with admin/expert role can delete practice test questions and tutorials.
 
 
 ## 16. Testing

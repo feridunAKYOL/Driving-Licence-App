@@ -34,8 +34,12 @@ __FRONTEND__
 * Home page needs
     * Responsive website
     __Header__
-    * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`)
+    * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`, `free sample test`, `our logo` )
     __Main Section__
+    * some fotos for advertisements
+    * our app tutorial (short , and it starts automatically when the page loaded)
+    * short explanations about other pages mentioned above.
+    * 
     * ...
     __Footer__
     * `Copyright`, `Contact` information...
@@ -47,7 +51,15 @@ Ideas about what the page should have..
 ## 2. User Story: Sign up
 
 A user can sign up / register online (self-registration).
-
+in the register part we ask the user :
+    - name and surname
+    - mail
+    - country
+    - city
+    - age
+    - create password
+    - secret question and answer to reset his password.
+    - ...
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
 __FRONTEND__
@@ -73,6 +85,7 @@ __BACKEND__
 * Access to `db`... Check the user if exists or not.
 * Write table user as online.
 *  Build `route`. Send confirmation/error `response` (`Successfully signed in`).
+* (optional) if user is a student , he sees the tests directly in the main section. So he easily continue to solve.
 
 ## 4. User Story: Logout
 
@@ -106,22 +119,41 @@ Ideas about what the page should have..
 - user can take practice test
 - user can enroll for test
 - user can take exam
+- user can see the results of the test , his correct and incorrect answers.
 - user can write comment/questions/feedback
 
 ## 8. User Story: Admin Page 
 
 * As an admin user can see a page specialized for him.
+* As an admin in the navbar there is an extra link for modifying(add,delete,change..) the sources (tutorials, articles, tests).
+    - As an Expert/Admin/Administrator/Teacher user can see all statistics of the students.
+        - how many registered students are there ? 
+        - how much success do get the students in the tests?
+    - As an Expert/Admin/Administrator/Teacher user can access the sources. 
+        - Expert/Admin/Administrator/Teacher can add/update/delete exam
+        - Expert/Admin/Administrator/Teacher can add/update/delete questions
+        - Expert/Admin/Administrator/Teacher can add/update/delete answers
+        - Expert/Admin/Administrator/Teacher can view test results
+        - Expert/Admin/Administrator/Teacher can grant user to take re-exam
 
-Ideas about what the page should have..
-- As an Expert/Admin/Administrator/Teacher user can see all statistics of the students.
-- how many registered students are there ? 
-- how much success do get the students in the tests?
-- in the administrator page there will be 2 parts. one is for access the sources. So he can add , change or delete. The other for the statistics of the students.
-- Expert/Admin/Administrator/Teacher can add/update/delete exam
-- Expert/Admin/Administrator/Teacher can add/update/delete questions
-- Expert/Admin/Administrator/Teacher can add/update/delete answers
-- Expert/Admin/Administrator/Teacher can view test results
-- Expert/Admin/Administrator/Teacher can grant user to take re-exam
+__FRONTEND__
+* when the user `click` the modify button , he goes to the another page.
+* there should be different folders for sources and tests.
+* in each folders also there will be related folders. and when clicked and folders he enters the inside of folder and see the content.
+* in each folder there is an `add` button. 
+* in the `modified page` there are 2 sections. sources and tests..
+* buttom of each source there will be `delete`button and `change`button.
+* there should be different
+
+__BACKEND__
+
+* when the user `clicked` the `add` button , ???run `add.js` , go to `db` and add 
+* when a user click a folder then he enters that folder.
+* when `delete` button clicked then first ask that `are you sure to delete this part?`
+* if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.
+* when the user clicked the `change` button then run `change.js` and access to `db` and change that part.
+* 
+
 
 ## 9. User Story: Test Page
 

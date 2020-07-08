@@ -61,7 +61,9 @@ __BACKEND__
 
 ## 3. User Story: Login
 
-A user can login.
+A user can login by using username and password.
+-If the system verifies users authentication, user will be directed to homepage
+-If the system doesn’t accept users authentication, an error message will show and request re-entry
 
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
@@ -91,11 +93,13 @@ __BACKEND__
 
 ## 5. User Story: Recover/Reset Password
 
-* If a user forget his/her password he can recover/reset his password (he will be asked some special questions to reset).
+* If a user forget his/her password he/she  can recover/reset his/his password by clicking forget password link. 
+- user will be asked to give answer to security questions.
+- user will enter new password and then reset it.
 
-## 6. User Story: Reset Password
+## 6. User Story: Successful Reset Password
 
-* If a user successfully signs in, he can go to his home page by clicking his name.
+* If a user successfully reset password user can signs in, user can go to his/her home page.
 
 ## 7. User Story: User Page 
 
@@ -107,6 +111,10 @@ Ideas about what the page should have..
 - user can enroll for test
 - user can take exam
 - user can write comment/questions/feedback
+- user writes comment and confirms the comment for display
+- user can view test result
+- update profile(optional)
+- user can logged out
 
 ## 8. User Story: Admin Page 
 

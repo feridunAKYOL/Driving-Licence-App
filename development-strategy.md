@@ -137,22 +137,22 @@ Ideas about what the page should have..
         - Expert/Admin/Administrator/Teacher can grant user to take re-exam
 
 __FRONTEND__
-* when the user `click` the modify button , he goes to the another page.
-* there should be different folders for sources and tests.
-* in each folders also there will be related folders. and when clicked and folders he enters the inside of folder and see the content.
-* in each folder there is an `add` button. 
-* in the `modified page` there are 2 sections. sources and tests..
-* buttom of each source there will be `delete`button and `change`button.
-* there should be different
+* there is a `modify sources` button , when he clicks, it goes to the another page.
+    * there should be different folders for sources and tests.
+    * in each folders also there will be related folders. and when clicked and folders he enters the inside of folder and see the content.
+    * in each folder there is an `add` button. 
+    * in the `modified page` there are 2 sections. sources and tests..
+    * buttom of each source there will be `delete`button and `change`button.
+* there is a `statistics` button. when he clicks the button , `render` the results and user sees the statistics. 
 
 __BACKEND__
 
-* when the user `clicked` the `add` button , ???run `add.js` , go to `db` and add 
+* when the user `clicked` the `add` button , open a box for uploading , run `add.js` , go to `db` and add the uploaded file to the folder.
 * when a user click a folder then he enters that folder.
 * when `delete` button clicked then first ask that `are you sure to delete this part?`
 * if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.
 * when the user clicked the `change` button then run `change.js` and access to `db` and change that part.
-* 
+* when the user click the `statistics` button it goes the `db`  and read the `statistics`
 
 
 ## 9. User Story: Test Page
@@ -175,9 +175,22 @@ Ideas about what the page should have..
 * A registered user can reach his results/scores.
 
 Ideas about what the page should have..
-- a user can see test result at the end of each  test and he can also see his wrong questions with the correct answers. 
-- user can view his result after he complete the test
-- user can see the solution/corrections
+- a user can see the the solution/corrections at the end of each test
+- a user can view his result after he complete the test.
+
+__FRONTEND__
+
+* results/statistics button mentioned above. these buttons are in two sections , one is in the test page of the student user  and other is in the main page of the admin.
+* as a student in the test page user see the amount of correct answers for each test besides the test name such as `test-1 21/25`
+* when a user solve a test , after the test he can see the results.
+
+__BACKEND__
+
+* to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `db`
+* when the test page is loaded , statistics is shown on beside it for each test. 
+* while solving a test after any question , the answer sends to `db`. there it `rendered` and the result table changes.
+* after rendering all user answers , we compute average success of any test and save it in `db`.
+* ...
 
 ## 11. User Story: Tutorials
 

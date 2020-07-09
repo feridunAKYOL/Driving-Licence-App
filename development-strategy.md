@@ -36,10 +36,9 @@ __FRONTEND__
     __Header__
     * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`, `free sample test`, `our logo` )
     __Main Section__
-    * some fotos for advertisements
-    * our app tutorial (short , and it starts automatically when the page loaded)
-    * short explanations about other pages mentioned above.
-    * 
+    * there is a `video` tag . our app tutorial (short , and it starts automatically when the page loaded)
+    * there is a `img` tag for tests. when click the photo then it goes to the test page.
+    * there is another `img` tag for practical information. when it is clicked then it goes to the `practical information` page.
     * ...
     __Footer__
     * `Copyright`, `Contact` information...
@@ -137,23 +136,27 @@ Ideas about what the page should have..
         - Expert/Admin/Administrator/Teacher can grant user to take re-exam
 
 __FRONTEND__
-* there is a `modify sources` button , when he clicks, it goes to the another page.
-    * there should be different folders for sources and tests.
-    * in each folders also there will be related folders. and when clicked and folders he enters the inside of folder and see the content.
-    * in each folder there is an `add` button. 
-    * in the `modified page` there are 2 sections. sources and tests..
-    * buttom of each source there will be `delete`button and `change`button.
-* there is a `statistics` button. when he clicks the button , `render` the results and user sees the statistics. 
+* There is a `modify sources(tests and tutorial)` button , when he clicks, it goes to the another page.
+    * There should be 2 `buttons` for `sources` and `tests`.
+    * When `sources` clicked he goes to the sources page. there he can  see all the materials and and `add` button to add new material.
+    * when he clicks the `add` button it opens `form` for uploading. in the `form` there will be `box?` for uploading pictures or videos and `text area` for text information and `input` for heading.
+    * Bottom of each material(video or text) there will be `delete` button and `change` button.
+    * When `tests` clicked he goes to the tests page. there he can see all the tests and and `add` button to add new question.
+    * when he click the `add` button then it opens a `form`. in the `form` tag there is `box?` for picture uploading, there are `input`s for subquestions and answers. 
+    * Bottom of each test there will be `delete` button and `change` button.
+* There is a `statistics` button. when he clicks the button ,  user sees the statistics. (how many students are enrolled for the course, test success of students , in which courses students have difficulties,... )
 
 __BACKEND__
 
-* when the user `clicked` the `add` button , open a box for uploading , run `add.js` , go to `db` and add the uploaded file to the folder.
-* when a user click a folder then he enters that folder.
-* when `delete` button clicked then first ask that `are you sure to delete this part?`
-* if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.
-* when the user clicked the `change` button then run `change.js` and access to `db` and change that part.
-* when the user click the `statistics` button it goes the `db`  and read the `statistics`
-
+* when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for materials)
+* when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for tests)
+* when `delete` button clicked then first ask that `are you sure to delete this part?`(for materials)
+* when `delete` button clicked then first ask that `are you sure to delete this part?` (for tests)
+* if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for materials)
+* if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for tests)
+* when the user clicked the `change` button then run `change.js` and access to `db` and change that part.(for materials)
+* when the user clicked the `change` button then run `change.js` and access to `db` and change that part. (for tests)
+* when the user click the `statistics` button it gets necessary information from `test` page.
 
 ## 9. User Story: Test Page
 
@@ -175,21 +178,24 @@ Ideas about what the page should have..
 * A registered user can reach his results/scores.
 
 Ideas about what the page should have..
-- a user can see the the solution/corrections at the end of each test
-- a user can view his result after he complete the test.
+- as a user he can see the the solution/corrections at the end of each test.
+- as a user if he click any test in the `results` page , he can see the result of his test.
+- as an admin he can see the average of the student success in the admin page.(optional)
+- as an admin he can see the total number of the students in the admin page.(optional)
 
 __FRONTEND__
 
-* results/statistics button mentioned above. these buttons are in two sections , one is in the test page of the student user  and other is in the main page of the admin.
-* as a student in the test page user see the amount of correct answers for each test besides the test name such as `test-1 21/25`
-* when a user solve a test , after the test he can see the results.
+* there are `img` tags for each  test. if user is successful in that course image has a `green` border. otherwise it has a `red` border.
+* at the bottom of each `img` there are 3 `input` areas, `correct answer` , `incorrect answer` , `total question`
+* each `img` has a link for the result of that test. when user click the  test then user see the correct answers of the questions.
+    * there are `img` tags for each question. if it is correct answered then the image has a `green` border otherwise it has a `red` border.
+    * at the bottom of the image there will be sub-questions with the correct answers.    
 
 __BACKEND__
 
-* to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `db`
-* when the test page is loaded , statistics is shown on beside it for each test. 
-* while solving a test after any question , the answer sends to `db`. there it `rendered` and the result table changes.
-* after rendering all user answers , we compute average success of any test and save it in `db`.
+* to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `db`.
+* it gets the correct answers , user's answers , questions from `db` when the page `loaded`.
+* after rendering all user answers , we compute average success of any test and save it in `db`. (optional)
 * ...
 
 ## 11. User Story: Tutorials

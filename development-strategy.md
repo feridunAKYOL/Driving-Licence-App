@@ -1,47 +1,49 @@
-#  Driving Licence App: Development Strategy
+# Driving Licence App: Development Strategy
 
 Building this app one step at a time.
 
 ## 0. Setup
 
-* Filled-out [planning document](https://cloud.openknowledge.be/s/Zq54xpbkNxE5aZc)
-* Define first communication plan.
-* Set up the starter project.
-    * Identify the main repository owner.
-    * Add each other as collaborators.
-    * Set up the project board.
-* Fork the [organized-for-deployment](https://github.com/HackYourFutureBelgium/organized-for-deployment).
-* Make a search about app and think on the samples.
-* Define user stories.
-* Write a first-draft development strategy.
-* Deploy the starter code.
-* Update `readme.md`
-* Begin planning the data tables for the application.
-* Update existing files according to requirements.
-* Create issues, assign issues, create milestones and labels.
-* Begin wireframing
+- Filled-out [planning document](https://cloud.openknowledge.be/s/Zq54xpbkNxE5aZc)
+- Define first communication plan.
+- Set up the starter project.
+  - Identify the main repository owner.
+  - Add each other as collaborators.
+  - Set up the project board.
+- Fork the [organized-for-deployment](https://github.com/HackYourFutureBelgium/organized-for-deployment).
+- Make a search about app and think on the samples.
+- Define user stories.
+- Write a first-draft development strategy.
+- Deploy the starter code.
+- Update `readme.md`
+- Begin planning the data tables for the application.
+- Update existing files according to requirements.
+- Create issues, assign issues, create milestones and labels.
+- Begin wireframing
 
 ## 1. User Story: Home Page - Overview
 
 A user can overview a sample tutorial, and can see overview of the page
-*** This user story can be divided into pieces as Header, Main Section Footer or Contact page, About page...
+\*\*\* This user story can be divided into pieces as Header, Main Section Footer or Contact page, About page...
 labels: `init`, `view`, `style`, `frontend`
 
-__FRONTEND__
-* Create `init.js` to declare home page for initialization.
-* Render UI. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method and use it for rendering/initializing.
-* Create `style.css`, use bootstrap. (this section will be updated)
-* Home page needs
-    * Responsive website
-    __Header__
-    * Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`)
-    __Main Section__
-    * ...
-    __Footer__
-    * `Copyright`, `Contact` information...
-    * Contact information on the home page.
+**FRONTEND**
+
+- Create `init.js` to declare home page for initialization.
+- Render UI. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method and use it for rendering/initializing.
+- Create `style.css`, use bootstrap. (this section will be updated)
+- Home page needs
+  - Responsive website
+    **Header**
+  - Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`)
+    **Main Section**
+  - ...
+    **Footer**
+  - `Copyright`, `Contact` information...
+  - Contact information on the home page.
 
 Ideas about what the page should have..
+
 - A user will know that if he wants to have full access to the sources he has to sign up. So when he enters the page he can easily see and understand that.
 
 ## 2. User Story: Sign up
@@ -50,14 +52,16 @@ A user can sign up / register online (self-registration).
 
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
-__FRONTEND__
-* Create an interface for user to sign up.
-* Render UI. When user clicks `sign up button` it will be `render`ed.  Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
+**FRONTEND**
 
-__BACKEND__
-* Access to `db`... Write new user to `db`.
-* Build `route`. Send confirmation/error `response` (`Successfully signed up`).
-* Open `welcome page`.
+- Create an interface for user to sign up.
+- Render UI. When user clicks `sign up button` it will be `render`ed. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
+
+**BACKEND**
+
+- Access to `db`... Write new user to `db`.
+- Build `route`. Send confirmation/error `response` (`Successfully signed up`).
+- Open `welcome page`.
 
 ## 3. User Story: Login
 
@@ -67,14 +71,16 @@ A user can login by using username and password.
 
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
-__FRONTEND__
-* Create an interface for user to login.
-* Render UI. When user clicks `login button` it will be `render`ed.  Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
+**FRONTEND**
 
-__BACKEND__
-* Access to `db`... Check the user if exists or not.
-* Write table user as online.
-*  Build `route`. Send confirmation/error `response` (`Successfully signed in`).
+- Create an interface for user to login.
+- Render UI. When user clicks `login button` it will be `render`ed. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
+
+**BACKEND**
+
+- Access to `db`... Check the user if exists or not.
+- Write table user as online.
+- Build `route`. Send confirmation/error `response` (`Successfully signed in`).
 
 ## 4. User Story: Logout
 
@@ -82,30 +88,34 @@ A user can logout.
 
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
-__FRONTEND__
-* Render UI. When user clicks `logout button` it will be `render`ed.  Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
-* `User name` `div` `text` will be changed as `blank('')`.
+**FRONTEND**
 
-__BACKEND__
-* Access to `db`... Check the user if exists or not.
-==>>  * Write table user as offline.
-*  Build `route`. Send confirmation/error `response`.
+- Render UI. When user clicks `logout button` it will be `render`ed. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method.
+- `User name` `div` `text` will be changed as `blank('')`.
+
+**BACKEND**
+
+- Access to `db`... Check the user if exists or not.
+  ==>> \* Write table user as offline.
+- Build `route`. Send confirmation/error `response`.
 
 ## 5. User Story: Recover/Reset Password
 
-* If a user forget his/her password he/she  can recover/reset his/his password by clicking forget password link. 
-- user will be asked to give answer to security questions.
-- user will enter new password and then reset it.
+- If a user forget his/her password he/she can recover/reset his/his password by clicking forget password link.
+
+* user will be asked to give answer to security questions.
+* user will enter new password and then reset it.
 
 ## 6. User Story: Successful Reset Password
 
-* If a user successfully reset password user can signs in, user can go to his/her home page.
+- If a user successfully reset password user can signs in, user can go to his/her home page.
 
-## 7. User Story: User Page 
+## 7. User Story: User Page
 
-* As an registered user can see a page specialized for him after logged in.
+- As an registered user can see a page specialized for him after logged in.
 
 Ideas about what the page should have..
+
 - user can get reading materials/resources.
 - user can take practice test
 - user can enroll for test
@@ -116,13 +126,14 @@ Ideas about what the page should have..
 - update profile(optional)
 - user can logged out
 
-## 8. User Story: Admin Page 
+## 8. User Story: Admin Page
 
-* As an admin user can see a page specialized for him.
+- As an admin user can see a page specialized for him.
 
 Ideas about what the page should have..
+
 - As an Expert/Admin/Administrator/Teacher user can see all statistics of the students.
-- how many registered students are there ? 
+- how many registered students are there ?
 - how much success do get the students in the tests?
 - in the administrator page there will be 2 parts. one is for access the sources. So he can add , change or delete. The other for the statistics of the students.
 - Expert/Admin/Administrator/Teacher can add/update/delete exam
@@ -133,73 +144,93 @@ Ideas about what the page should have..
 
 ## 9. User Story: Test Page
 
-* As an registered user can reach tests.
+- As an registered user can reach tests.
 
-Ideas about what the page should have..
-- when a user click for the tests he can see all the tests title.
-- when a user click for the tests he can see his result for any test separately.
-- when a user click a test to solve he can see only one question in main section and he can see all the question in the side bar. So he can easily jump any question he wants.
-- if a user don't finish the test and later he wants to solve remaining questions, the test will continue where he stopt.
-- user can take driving practice test
-- user can apply for theory test online
-- user can get his candidate number to take the online test
-- user can take online theory test
-- user can take re-exam(re-test)
+* when a user click for the tests he can see all the tests title.
+* when a user click for the tests he can see his result for any test separately.
+* A user can go back and next question.
+* if a user don't finish the test and later he wants to solve remaining questions, the test will continue where he stopt.
+* A user can see his total time 20 minutes for 20 questions X 4 sub-questions = 80 questions.
+* A user can take re-exam(re-test).
+
+**FRONTEND**
+
+- Render UI. Test folder will be created. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method and use it for rendering/initializing.
+- Create `styleTest.css`, use bootstrap.
+- It will be responsive.
+- A button when it is clicked to see all the tests with its title and pictures.
+- A button when it is clicked to see his test results for any test separately.
+- A button for next question.
+- A button for back question.
+- In test page there will be a picture of question, sound of question and 4 different sub-questions are related with this question.
+- A button for sound of question description.
+- 4 buttons for each sub-question sound.
+- For each sub-question there will be yes and no checkboxes.
+- A button to see his results.
+- A button when it is clicked he can do test again.
+- An icon to see the time.
+
+**BACKEND**
+
+- Test result button will take results from db.
+- When a registered user sign in his page, has remained questions will be send from db.
 
 ## 10. User Story: Results
 
-* A registered user can reach his results/scores.
+- A registered user can reach his results/scores.
 
 Ideas about what the page should have..
-- a user can see test result at the end of each  test and he can also see his wrong questions with the correct answers. 
+
+- a user can see test result at the end of each test and he can also see his wrong questions with the correct answers.
 - user can view his result after he complete the test
 - user can see the solution/corrections
 
 ## 11. User Story: Tutorials
 
-* A registered user can see tutorials.
+- A registered user can see tutorials.
 
 ## 12. User Story: Comments
 
-* A registered user can add comment and see all the comments.
-* A registered user with admin/expert role can reply to comment/feedbacks.
-Ideas about what the page should have..
-- user can post comment, question, feedback
+- A registered user can add comment and see all the comments.
+- A registered user with admin/expert role can reply to comment/feedbacks.
+  Ideas about what the page should have..
+
+* user can post comment, question, feedback
 
 ## 13. User Story: Add Tutorial Materials
 
-* A registered user with admin/expert role can add practice test questions and tutorials.
+- A registered user with admin/expert role can add practice test questions and tutorials.
 
 ## 14. User Story: Update Tutorial Materials
 
-* A registered user with admin/expert role can update practice test questions and tutorials.
+- A registered user with admin/expert role can update practice test questions and tutorials.
 
 ## 15. User Story: Delete Tutorial Materials
 
-* A registered user with admin/expert role can delete practice test questions and tutorials.
-
+- A registered user with admin/expert role can delete practice test questions and tutorials.
 
 ## 16. Testing
 
-* Be sure all app sections works properly. Making sure your deployed app works for the live demo.
+- Be sure all app sections works properly. Making sure your deployed app works for the live demo.
 
 ## 17. Deploying App
 
-* Deploy app to make it online and accessible for the users. Use `Heroku` or another method.
+- Deploy app to make it online and accessible for the users. Use `Heroku` or another method.
 
 ## 18. Complete readme.md
 
-* Complete readme.md for more details about the app.
+- Complete readme.md for more details about the app.
 
 Ideas about what the page should have..
+
 - Contributions,
 - All the contact infos about team members.
 - ! This section can be updated always to make a perfect readme.
 
 ## 19. Presentation
 
-* Preparing a presentation where everyone in the team will speak.
+- Preparing a presentation where everyone in the team will speak.
 
 ## 20. Video
 
-* A short video add for the project.
+- A short video add for the project.

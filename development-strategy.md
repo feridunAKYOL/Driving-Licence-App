@@ -84,7 +84,6 @@ __BACKEND__
 * Access to `db`... Check the user if exists or not.
 * Write table user as online.
 *  Build `route`. Send confirmation/error `response` (`Successfully signed in`).
-* (optional) if user is a student , he sees the tests directly in the main section. So he easily continue to solve.
 
 ## 4. User Story: Logout
 
@@ -141,17 +140,17 @@ __FRONTEND__
     * When `sources` clicked he goes to the sources page. there he can  see all the materials and and `add` button to add new material.
     * when he clicks the `add` button it opens `form` for uploading. in the `form` there will be `box?` for uploading pictures or videos and `text area` for text information and `input` for heading.
     * Bottom of each material(video or text) there will be `delete` button and `change` button.
+    * when `delete` button clicked then first ask that `are you sure to delete this part?`(for materials)
     * When `tests` clicked he goes to the tests page. there he can see all the tests and and `add` button to add new question.
     * when he click the `add` button then it opens a `form`. in the `form` tag there is `box?` for picture uploading, there are `input`s for subquestions and answers. 
     * Bottom of each test there will be `delete` button and `change` button.
+    * when `delete` button clicked then first ask that `are you sure to delete this part?` (for tests)
 * There is a `statistics` button. when he clicks the button ,  user sees the statistics. (how many students are enrolled for the course, test success of students , in which courses students have difficulties,... )
 
 __BACKEND__
 
 * when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for materials)
 * when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for tests)
-* when `delete` button clicked then first ask that `are you sure to delete this part?`(for materials)
-* when `delete` button clicked then first ask that `are you sure to delete this part?` (for tests)
 * if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for materials)
 * if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for tests)
 * when the user clicked the `change` button then run `change.js` and access to `db` and change that part.(for materials)

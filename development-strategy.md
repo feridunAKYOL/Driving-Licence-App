@@ -27,20 +27,23 @@ A user can overview a sample tutorial, and can see overview of the page
 \*\*\* This user story can be divided into pieces as Header, Main Section Footer or Contact page, About page...
 labels: `init`, `view`, `style`, `frontend`
 
-**FRONTEND**
 
+**FRONTEND**
 - Create `init.js` to declare home page for initialization.
 - Render UI. Create/work on `view.js`, create/work on a class named `UI`, create/work on `render` method and use it for rendering/initializing.
 - Create `style.css`, use bootstrap. (this section will be updated)
 - Home page needs
-  - Responsive website
+    - Responsive website
     **Header**
-  - Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`)
+    - Collapse navigation bar (`links` to other pages or one page, `sign up`, `sign in buttons`,`tutorials`,`practice-test`,`browse-tests`, `profile`, `free sample test`, `our logo` )
     **Main Section**
-  - ...
+    - there is a `video` tag . our app tutorial (short , and it starts automatically when the page loaded)
+    - there is a `img` tag for tests. when click the photo then it goes to the test page.
+    - there is another `img` tag for practical information. when it is clicked then it goes to the `practical information` page.
+    - ...
     **Footer**
-  - `Copyright`, `Contact` information...
-  - Contact information on the home page.
+    - `Copyright`, `Contact` information...
+    - Contact information on the home page.
 
 Ideas about what the page should have..
 
@@ -49,7 +52,15 @@ Ideas about what the page should have..
 ## 2. User Story: Sign up
 
 A user can sign up / register online (self-registration).
-
+in the register part we ask the user :
+    - name and surname
+    - mail
+    - country
+    - city
+    - age
+    - create password
+    - secret question and answer to reset his password.
+    - ...
 labels: `frontend`, `view`, `style`, `backend`, `route`
 
 **FRONTEND**
@@ -120,6 +131,7 @@ Ideas about what the page should have..
 - user can take practice test
 - user can enroll for test
 - user can take exam
+- user can see the results of the test , his correct and incorrect answers.
 - user can write comment/questions/feedback
 - user writes comment and confirms the comment for display
 - user can view test result
@@ -129,18 +141,39 @@ Ideas about what the page should have..
 ## 8. User Story: Admin Page
 
 - As an admin user can see a page specialized for him.
+- As an admin in the navbar there is an extra link for modifying(add,delete,change..) the sources (tutorials, articles, tests).
+    - As an Expert/Admin/Administrator/Teacher user can see all statistics of the students.
+        - how many registered students are there ? 
+        - how much success do get the students in the tests?
+    - As an Expert/Admin/Administrator/Teacher user can access the sources. 
+        - Expert/Admin/Administrator/Teacher can add/update/delete exam
+        - Expert/Admin/Administrator/Teacher can add/update/delete questions
+        - Expert/Admin/Administrator/Teacher can add/update/delete answers
+        - Expert/Admin/Administrator/Teacher can view test results
+        - Expert/Admin/Administrator/Teacher can grant user to take re-exam
 
-Ideas about what the page should have..
+**FRONTEND**
+- There is a `modify sources(tests and tutorial)` button , when he clicks, it goes to the another page.
+    - There should be 2 `buttons` for `sources` and `tests`.
+    - When `sources` clicked he goes to the sources page. there he can  see all the materials and and `add` button to add new material.
+    - when he clicks the `add` button it opens `form` for uploading. in the `form` there will be `box?` for uploading pictures or videos and `text area` for text information and `input` for heading.
+    - Bottom of each material(video or text) there will be `delete` button and `change` button.
+    - when `delete` button clicked then first ask that `are you sure to delete this part?`(for materials)
+    - When `tests` clicked he goes to the tests page. there he can see all the tests and and `add` button to add new question.
+    - when he click the `add` button then it opens a `form`. in the `form` tag there is `box?` for picture uploading, there are `input`s for subquestions and answers. 
+    - Bottom of each test there will be `delete` button and `change` button.
+    - when `delete` button clicked then first ask that `are you sure to delete this part?` (for tests)
+- There is a `statistics` button. when he clicks the button ,  user sees the statistics. (how many students are enrolled for the course, test success of students , in which courses students have difficulties,... )
 
-- As an Expert/Admin/Administrator/Teacher user can see all statistics of the students.
-- how many registered students are there ?
-- how much success do get the students in the tests?
-- in the administrator page there will be 2 parts. one is for access the sources. So he can add , change or delete. The other for the statistics of the students.
-- Expert/Admin/Administrator/Teacher can add/update/delete exam
-- Expert/Admin/Administrator/Teacher can add/update/delete questions
-- Expert/Admin/Administrator/Teacher can add/update/delete answers
-- Expert/Admin/Administrator/Teacher can view test results
-- Expert/Admin/Administrator/Teacher can grant user to take re-exam
+**BACKEND**
+
+- when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for materials)
+- when the user `clicked` the `add` button in the sources, run `add.js` , go to `db` and add the uploaded file to the folder.(for tests)
+- if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for materials)
+- if the user allow to `delete` then run `delete.js` and access to `db` and delete that part.(for tests)
+- when the user clicked the `change` button then run `change.js` and access to `db` and change that part.(for materials)
+- when the user clicked the `change` button then run `change.js` and access to `db` and change that part. (for tests)
+- when the user click the `statistics` button it gets necessary information from `test` page.
 
 ## 9. User Story: Test Page
 
@@ -181,9 +214,25 @@ Ideas about what the page should have..
 
 Ideas about what the page should have..
 
-- a user can see test result at the end of each test and he can also see his wrong questions with the correct answers.
-- user can view his result after he complete the test
-- user can see the solution/corrections
+- as a user he can see the the solution/corrections at the end of each test.
+- as a user if he click any test in the `results` page , he can see the result of his test.
+- as an admin he can see the average of the student success in the admin page.(optional)
+- as an admin he can see the total number of the students in the admin page.(optional)
+
+**FRONTEND**
+
+- there are `img` tags for each  test. if user is successful in that course image has a `green` border. otherwise it has a `red` border.
+- at the bottom of each `img` there are 3 `input` areas, `correct answer` , `incorrect answer` , `total question`
+- each `img` has a link for the result of that test. when user click the  test then user see the correct answers of the questions.
+    - there are `img` tags for each question. if it is correct answered then the image has a `green` border otherwise it has a `red` border.
+    - at the bottom of the image there will be sub-questions with the correct answers.    
+
+**BACKEND**
+
+- to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `db`.
+- it gets the correct answers , user's answers , questions from `db` when the page `loaded`.
+- after rendering all user answers , we compute average success of any test and save it in `db`. (optional)
+- ...
 
 ## 11. User Story: Tutorials
 

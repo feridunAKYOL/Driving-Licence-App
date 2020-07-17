@@ -4,7 +4,7 @@ Building this app one step at a time.
 
 ## 0. Setup
 
-- Filled-out [planning document](https://cloud.openknowledge.be/s/Zq54xpbkNxE5aZc)
+- Filled-out [planning document](https://cloud.openknowledge.be/s/Zq54xpbkNxE5aZc) 
 - Define first communication plan.
 - Set up the starter project.
   - Identify the main repository owner.
@@ -219,7 +219,7 @@ Ideas about what the page should have..
 
 **BACKEND**
 
-- Read Test names from `Test Table`. and send them as a respond.
+- Read Test names from `Test Table`. and send them as a respond. (x)
 
 ## 12. User Story: Test Page
 
@@ -271,8 +271,8 @@ Ideas about what the page should have..
 
 **BACKEND**
 
-- to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `statics` table on `db`.
-- it gets the correct answers , user's answers , questions from `db` when the page `loaded`.
+- to show the correct answer amount for each test, it `render` his answers with the correct answers and save this statistics to `statics` table on `db`. (x)
+- it gets the correct answers , user's answers , questions from `db` when the page `loaded`.(x)
 - after rendering all user answers , we compute average success of any test and save it in `db`. (optional)
 - ...
 
@@ -283,7 +283,7 @@ Ideas about what the page should have..
 
 - Create a section for writing (`frontend`) comment
 - Create a button to send comment (`frontend`) it.
-- Comment text will saved in `Comment table` with `user id`, `test name`, `date and time`
+- Comment text will saved in `Comment table` with `user id`, `test name`, `date and time`.
 
   Ideas about what the page should have..
 

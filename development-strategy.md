@@ -240,9 +240,15 @@ Ideas about what the page should have..
 - An icon to see the time.
 
 **BACKEND**
+  Initialization
+- Create one method/function to read from db on `situation` table `text`, `image`, `audio` columns test-related situation.
+  and on `question` table `text`, `audio` columns situation-related question.
 
-- Read results from db.
-- When a registered user sign in his page, has remained questions will be send from db.
+  After click `End My Test`
+- Create one method/function to read from db on `situation` table `image` columns test-related situation.
+  and on `option` table `correctOption` columns question-related option to make see which questions are correct which are wrong.
+
+- Create one method/function to write to db on `result` table `correctCount` columns which relates chosen test.
 
 ## 13. User Story: Results
 

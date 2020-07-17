@@ -1,11 +1,10 @@
+const controllers = require('./controllers.js');
 const express = require('express');
 
-const app = express();
+const router = express.Router();
 
-app.get('/', function (req, res) {
-    res.send('This is only for test!');
-});
-
-module.exports = app;
+router.get('/', controllers.get);
+router.get('/test/freetest', controllers.getFreeTest);
 
 
+module.exports = router;

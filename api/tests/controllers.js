@@ -8,7 +8,7 @@ const controllers = {
     getFreeTest: (req, res) => {
 
         const sql = `
-                    SELECT t.title, s.image, s.audio, s.text, q.audio, q.text  
+                    SELECT t.title, s.image, s.audio, s.text, q.audio as qaudio, q.text as qtext  
                     FROM test as t
                         LEFT JOIN situation as s on t.testId = s.testId
                         LEFT JOIN question as q on s.situationId = q.situationId

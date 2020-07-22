@@ -77,42 +77,48 @@ const controllers = {
 		});
 	},
 
-	// getAnswer: (req, res) => {
-	// 	debugger;
-	// 	const testName = req.params.testName;
-	// 	const userAnswer = req.body.userAnswer;
-	// 	const count = 0;
-	// 	const sql = `SELECT q.correctOption , s.situationId FROM question q
-    //             LEFT JOIN situation s
-    //             on s.situationId = q.situationId
-    //             LEFT JOIN test t
-    //             on t.testId = s.testId
-    //             WHERE t.title = ${testName}
-    //             order by q.questionId ASC`;
+	getAnswer: (req, res) => {
+		debugger;
+		const testName = req.params.testName;
+		const userAnswer = req.body.userAnswer;
+		let order = 0;
+		const sql = `SELECT q.correctOption , s.situationId FROM question q
+                LEFT JOIN situation s
+                on s.situationId = q.situationId
+                LEFT JOIN test t
+                on t.testId = s.testId
+                WHERE t.title = ${testName}
+                order by q.questionId ASC`;
 
-	// 	db.all(sql, (err, rows) => {
-	// 		if (err) {
-	// 			res.status(400).json({ error: err.message });
-	// 			return;
-	// 		}
-	// 		const result = [];
-	// 		for (let i = 1; i <= 25; i++) {
-	// 			let answers = rows.filter((question) => Number(question.situationId) === i);
-	// 			let isCorr = true;
-	// 			for (let j=0; j< answers.length ; j++){
-    //                 if(answers[i].correctOption === Number(userAnswer[count])){
-    //                     isCorr = isCorr && true ;
-    //                     count ++ ;
-    //                 }else {
-    //                     isCorr =false ;
-    //                     count ++ ;
-    //                 }
-    //             }
-	// 			result.push(isCorrect);
-	// 		}
-	// 		res.json(result);
-	// 	});
-	// }
+		db.all(sql, (err, rows) => {
+			if (err) {
+				res.status(400).json({ error: err.message });
+				return;
+			}
+			let testLength = 0;
+			rows.forEach(el => el.situationId > testLength ? testLength = el.situationId : testLength);
+			const result = Array(testLength).fill(null);
+			for (let i = 1; i <= testLength; i++) {
+				let answers = rows.filter((question) => Number(question.situationId) === i);
+					if (userAnswer.length>=answers.length){
+					let isCorr = true;
+					answers.map((answer) => {
+						
+						if(answer.correctOption === Number(userAnswer[order])){
+							isCorr = isCorr && true;
+							order;
+						} else{
+							isCorr = false;
+							order+=1 ;
+						} 
+					})
+					result[i-1] = isCorr;
+					answers.forEach(el=> userAnswer.shift())
+				}
+			};
+			res.json(result);
+		});
+	}
 };
 
 module.exports = controllers;

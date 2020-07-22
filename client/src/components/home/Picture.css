@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+}
+.driver-card {
+  position: absolute;
+  bottom: 200px;
+  left: -150px;
+  color: #fd8a5e;
+}
+.card-text {
+  color: #019286;
+}

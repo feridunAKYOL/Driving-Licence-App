@@ -1,0 +1,14 @@
+body {
+  font-family: "Rowdies", cursive;
+  height: 100%;
+  margin: 0;
+}
+h2 {
+  color: #019286;
+}
+.practice-text {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}

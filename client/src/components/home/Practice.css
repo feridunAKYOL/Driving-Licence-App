@@ -1,0 +1,15 @@
+.practice-pic {
+  width: 5vw;
+}
+.practice-text {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: #fd8a5e;
+}
+h5 {
+  color: #ff598f;
+}

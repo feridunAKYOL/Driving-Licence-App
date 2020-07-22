@@ -80,8 +80,7 @@ const controllers = {
 	getAnswer: (req, res) => {
 		debugger;
 		const testName = req.params.testName;
-		const userAnswer = req.body.userAnswer;
-		let order = 0;
+		const userAnswers = req.body.userAnswer;
 		const sql = `SELECT q.correctOption , s.situationId FROM question q
                 LEFT JOIN situation s
                 on s.situationId = q.situationId
@@ -95,27 +94,30 @@ const controllers = {
 				res.status(400).json({ error: err.message });
 				return;
 			}
+			// find the question number in the test
 			let testLength = 0;
 			rows.forEach(el => el.situationId > testLength ? testLength = el.situationId : testLength);
+
 			const result = Array(testLength).fill(null);
 			for (let i = 1; i <= testLength; i++) {
-				let answers = rows.filter((question) => Number(question.situationId) === i);
-					if (userAnswer.length>=answers.length){
+
+				// find each situation
+				let situation = rows.filter((question) => Number(question.situationId) === i);
+				
+				// find user answer for this situation
+				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === i);
+				if(user_answer.length === situation.length){
 					let isCorr = true;
-					answers.map((answer) => {
-						
-						if(answer.correctOption === Number(userAnswer[order])){
-							isCorr = isCorr && true;
-							order;
-						} else{
-							isCorr = false;
-							order+=1 ;
-						} 
-					})
+					for (let j=0; j < situation.length ; j++){
+						if(situation[j].correctOption === user_answer[j].answer){
+							isCorr = isCorr && true ;
+						}else {
+							isCorr = false ;
+						}
+					}
 					result[i-1] = isCorr;
-					answers.forEach(el=> userAnswer.shift())
 				}
-			};
+			}
 			res.json(result);
 		});
 	}

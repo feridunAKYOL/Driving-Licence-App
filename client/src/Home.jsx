@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Picture from "./components/home/Picture";
+import Cards from "./components/home/Cards";
+import Practice from "./components/home/Practice";
+import Footer from "./components/home/Footer";
+import CustomNavbar from "./components/home/CustomNavbar";
 
 export default class Home extends Component {
   constructor() {
@@ -17,8 +22,11 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
-        <p>{this.state.message}</p>
+        <CustomNavbar />
+        <Picture />
+        <Cards />
+        <Practice />
+        <Footer />
       </div>
     );
   }

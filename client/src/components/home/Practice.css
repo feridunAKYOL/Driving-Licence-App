@@ -1,19 +1,12 @@
 .practice-pic {
-<<<<<<< HEAD
-  width: 5vw;
-=======
   width: 15vw;
->>>>>>> development
 }
 .practice-text {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-=======
   font-family: "Oxygen", sans-serif;
->>>>>>> development
 }
 h1 {
   color: #fd8a5e;
@@ -21,9 +14,6 @@ h1 {
 h5 {
   color: #ff598f;
 }
-<<<<<<< HEAD
-=======
 .driver-card {
   font-size: 1vw;
 }
->>>>>>> development

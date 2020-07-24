@@ -1,13 +1,9 @@
 body {
   margin: 0;
-<<<<<<< HEAD
   padding: 0;
-  font-family: "Rowdies", cursive;
-=======
   font-family: "Rowdies", cursive;
   height: 100vh;
 }
-:root {
->>>>>>> development
+#root {
   height: 100%;
 }

@@ -7,20 +7,10 @@ const Picture = () => {
     <Container>
       <Row className="justify-content-center container m-5">
         <Image src="/assets/driversCourse.webp" xs={9} lg={12} />
-<<<<<<< HEAD
         <Card className="driver-card " xs={1} lg={2}>
           <Card.Body>
             <Card.Title>Learn on your schedule</Card.Title>
-=======
-        <Card
-          className="driver-card d-none d-md-block"
-          style={{ width: "20vw", height: "14vh" }}
-        >
-          <Card.Body>
-            <Card.Title style={{ fontSize: "1.3vw" }}>
-              Learn on your schedule
-            </Card.Title>
->>>>>>> development
+
             <Card.Text className="card-text">
               Anywhere, anytime.
               <br /> Prepare for your driving license today!

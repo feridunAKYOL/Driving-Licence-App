@@ -5,11 +5,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 const Cards = () => {
   return (
     <Container>
-<<<<<<< HEAD
-      <Row>
-=======
       <Row className="three-cards">
->>>>>>> development
         <Col>
           <h2 className="text-center" variant="info">
             How We Work

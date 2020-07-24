@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-body {
-  font-family: "Rowdies", cursive;
-  height: 100%;
-  margin: 0;
-}
-h2 {
-  color: #019286;
-=======
+
 .three-cards {
   height: 100%;
   margin: 0;
   font-family: "Rowdies", cursive;
->>>>>>> development
 }
 .practice-text {
   display: flex;
@@ -19,10 +10,9 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
+
 h2 {
   color: #019286;
   font-family: "Rowdies", cursive;
 }
->>>>>>> development
+

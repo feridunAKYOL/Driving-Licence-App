@@ -3,6 +3,10 @@ import Picture from "./components/home/Picture";
 import Cards from "./components/home/Cards";
 import Practice from "./components/home/Practice";
 import Footer from "./components/home/Footer";
+<<<<<<< HEAD
+=======
+import CustomNavbar from "./components/home/CustomNavbar";
+>>>>>>> development
 
 export default class Home extends Component {
   constructor() {
@@ -21,6 +25,10 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
+=======
+        <CustomNavbar />
+>>>>>>> development
         <Picture />
         <Cards />
         <Practice />

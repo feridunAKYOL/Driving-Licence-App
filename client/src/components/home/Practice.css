@@ -1,0 +1,19 @@
+.practice-pic {
+  width: 15vw;
+}
+.practice-text {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oxygen", sans-serif;
+}
+h1 {
+  color: #fd8a5e;
+}
+h5 {
+  color: #ff598f;
+}
+.driver-card {
+  font-size: 1vw;
+}

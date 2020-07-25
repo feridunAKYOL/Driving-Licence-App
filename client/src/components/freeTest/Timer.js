@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Timer extends Component {
   state = {
-    minutes: 10,
+    minutes: 25,
     seconds: 0,
   };
 
@@ -39,9 +39,9 @@ export default class Timer extends Component {
         {minutes === 0 && seconds === 0 ? (
           <h3>Busted!</h3>
         ) : (
-          <h3>
-            Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-          </h3>
+          <h4>
+            Time Left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          </h4>
         )}
       </div>
     );

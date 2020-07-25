@@ -11,12 +11,11 @@ import "./App.css";
 import Home from "./Home";
 // import Secret from "./Secret";
 // import Login from "./Login";
-import FreeTest from "./components/FreeTest/FreeTest";
+import FreeTest from "./components/freeTest/FreeTest";
 
 class App extends Component {
   render() {
     return (
-
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />

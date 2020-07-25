@@ -7,9 +7,11 @@ const Picture = () => {
     <Container>
       <Row className="justify-content-center container m-5">
         <Image src="/assets/driversCourse.webp" xs={9} lg={12} />
-        <Card className="driver-card " xs={1} lg={2}>
+        <Card className="driver-card d-none d-md-block">
           <Card.Body>
-            <Card.Title>Learn on your schedule</Card.Title>
+            <Card.Title className="card-title">
+              Learn on your schedule
+            </Card.Title>
 
             <Card.Text className="card-text">
               Anywhere, anytime.

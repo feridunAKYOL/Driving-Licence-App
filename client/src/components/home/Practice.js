@@ -10,18 +10,18 @@ class Practice extends React.Component {
   }
   render() {
     return (
-      <Container>
+      <Container className="container">
         <Row>
           <Col xs={12} md={5}>
             <Row>
               <h1 className="practice-text m-5">Take Practice Test</h1>
             </Row>
-            <Row>
+            <Row className="practice-text">
               <Link to="/freetest">
                 <Image
                   src="/assets/freeTest.png"
                   roundedCircle
-                  className="practice-pic practice-text"
+                  className="practice-pic"
                 />
               </Link>
             </Row>

@@ -96,7 +96,7 @@ const controllers = {
 	getQuestion: (req, res) => {
 		const testName = req.params.testName;
 		const situation = req.params.situation;
-		const sql = `SELECT q.text , q.audio , q.explanation , o.text FROM question q
+		const sql = `SELECT q.text as text , q.audio , q.explanation , o.text as answer FROM question q
                 LEFT JOIN situation s
                 on q.situationId = s.situationId
                 LEFT JOIN test t

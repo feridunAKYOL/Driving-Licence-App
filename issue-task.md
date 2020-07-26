@@ -21,8 +21,8 @@ The parts to be done is listed below. Please choose the issues you want and add 
 | 17 | 13. User Story: Results - Backend | 2 →  |
 | 18 | 14. User Story: Comments Write/send/read (user page) - Frontend | 1 → Rahel |
 | 20 | 14. User Story: Comments Write/send/read (user page) - Backend | 1 → Rahel |
-| 21 | 15. User Story: Tutorials - Frontend | 1 → |
-| 22 | 15. User Story: Tutorials - Backend | 1 → |
+| 21 | 15. User Story: Tutorials - Frontend | 1 → Ayse |
+| 22 | 15. User Story: Tutorials - Backend | 1 →  Ayse|
 | | __Nice to have__
 | 23 | 7. User Story: Teacher Page (This part is "nice to have") | 1 → |
 | 24 | 8. User Story: Add Tutorial Materials (This part is "nice to have") | 2 → |

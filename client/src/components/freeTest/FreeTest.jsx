@@ -109,7 +109,7 @@ const FreeTest = () => {
         setFileNames(data);
       })
     },
-    [situationNumber]
+    []
   );
 
   return (
@@ -119,12 +119,14 @@ const FreeTest = () => {
         <Row className="test-part">
           <Col xs={1}></Col>
           <Col xs={8} md={9}>
-            {situation.map((situation_img, id) => (
+            {fileNames.filter((el) =>
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
+            ).map((img) => (
               <Image
-                src={ fileName } //{situation_img.image}
+                src={img.fileRelativePath } //{situation_img.image}
                 rounded
                 className="image-situation  my-2"
-                key={id}
+                key={img.situationNumber}
               />
             ))}
           </Col>
@@ -133,7 +135,7 @@ const FreeTest = () => {
               src="/assets/next2.jpeg"
               roundedCircle
               className="next-button"
-              onClick={doSomething}
+              onClick={() => goToNext() }
             />
           </Col>
         </Row>

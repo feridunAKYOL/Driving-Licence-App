@@ -1,4 +1,5 @@
 const db = require('../db-connection');
+const fileNames = require("../fileNames.json");
 
 const controllers = {
 	get: (req, res) => {
@@ -11,7 +12,8 @@ const controllers = {
                     FROM test as t
                         LEFT JOIN situation as s on t.testId = s.testId
                         LEFT JOIN question as q on s.situationId = q.situationId
-                        WHERE t.title = 'equipment'`;
+						WHERE t.title = 'equipment'
+					`;
 
 		db.all(sql, (err, rows) => {
 			if (err) {
@@ -22,15 +24,27 @@ const controllers = {
 			res.json(rows);
 		});
 	},
-	//------------------------------------------------
+	getFileNames: (req, res) => {
+		try {
+			// respond with the return value if there was no error
+			res.json(fileNames);
+		} catch (err) {
+			// respond with 500 if there was an error
+			res.status(500).send(`${err.name}: ${err.message}`);
+		}
+	},
+//------------------------------------------------
 
 	//http://localhost:5000/api/tests/'equipment'
 	getTest: (req, res) => {
 		const testName = req.params.testName;
-		const sql = `SELECT s.image FROM test t
-          LEFT JOIN situation s
-          on t.testId = s.testId
-          WHERE t.title = ${testName}`;
+		const sql = `
+					SELECT s.image 
+					FROM test t
+          			LEFT JOIN situation s
+          				on t.testId = s.testId
+					WHERE t.title = ${testName}
+					`;
 
 		db.all(sql, (err, rows) => {
 			if (err) {

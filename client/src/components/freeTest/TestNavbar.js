@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Timer from "./Timer";
 import "./TestNavbar.css";
 
-const TestNavbar = () => {
+const TestNavbar = ({situationNo , testLength}) => {
   return (
     <Navbar collapseOnSelect expand="lg" className="color-navbar">
       <Navbar.Brand>
@@ -20,7 +20,7 @@ const TestNavbar = () => {
       >
         <Navbar className="">
           <Navbar.Brand>
-            <h4 className="">1 out of 25</h4>
+  <h4 className="">{situationNo} out of {testLength}</h4>
           </Navbar.Brand>
           <Navbar.Brand href="/">
             <h3 className="mx-4">Home</h3>

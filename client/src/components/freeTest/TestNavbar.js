@@ -18,9 +18,9 @@ const TestNavbar = () => {
         id="responsive-navbar-nav"
         className="justify-content-end"
       >
-        <Navbar className="">
+        <Navbar>
           <Navbar.Brand>
-            <h4 className="">1 out of 25</h4>
+            <h4>1 out of 25</h4>
           </Navbar.Brand>
           <Navbar.Brand href="/">
             <h3 className="mx-4">Home</h3>

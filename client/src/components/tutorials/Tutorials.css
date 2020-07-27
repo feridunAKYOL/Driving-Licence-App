@@ -1,0 +1,16 @@
+.tutorials {
+  height: 100%;
+  margin: 0;
+  font-family: "Rowdies", cursive;
+}
+.cards-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.cards {
+  border: solid 4px grey;
+  justify-content: center;
+  align-items: center;
+}

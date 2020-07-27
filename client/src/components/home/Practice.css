@@ -1,12 +1,17 @@
+.container {
+  height: 100%;
+  margin: 0;
+  font-family: "Rowdies", cursive;
+}
+
 .practice-pic {
-  width: 15vw;
+  width: 15rem;
 }
 .practice-text {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
-  font-family: "Oxygen", sans-serif;
 }
 h1 {
   color: #fd8a5e;

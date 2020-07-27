@@ -1,15 +1,17 @@
 import React from "react";
-import { Container, Row, Image, Card } from "react-bootstrap";
+import { Row, Image, Card } from "react-bootstrap";
 import "./Picture.css";
 
 const Picture = () => {
   return (
-    <Container>
-      <Row className="justify-content-center container m-5">
-        <Image src="/assets/driversCourse.webp" xs={9} lg={12} />
-        <Card className="driver-card " xs={1} lg={2}>
+    <>
+      <Image src="/assets/driversCourse.webp" className="first-image" xs={10} />
+      <Row className="justify-content-center">
+        <Card className="driver-card d-none d-md-block">
           <Card.Body>
-            <Card.Title>Learn on your schedule</Card.Title>
+            <Card.Title className="card-title">
+              Learn on your schedule
+            </Card.Title>
 
             <Card.Text className="card-text">
               Anywhere, anytime.
@@ -18,7 +20,7 @@ const Picture = () => {
           </Card.Body>
         </Card>
       </Row>
-    </Container>
+    </>
   );
 };
 

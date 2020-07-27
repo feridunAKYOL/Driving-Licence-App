@@ -37,7 +37,7 @@ function findInDir(dir, filter, fileList = []) {
 
 // Usage
 let filePathToFind = '/home/hackyourfuture/Documents/HYF/09-Project/Driving-Licence-App/client/public/assets/tests';
-let fileNames = findInDir(filePathToFind, /\.jpeg$/);
+let fileNames = findInDir(filePathToFind, /\.(jpg|jpeg)$/);
 
 let data = JSON.stringify(fileNames);
 fs.writeFileSync('./fileNames.json', data);

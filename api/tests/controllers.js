@@ -22,7 +22,7 @@ const controllers = {
 			res.json(rows);
 		});
 	},
-//------------------------------------------------
+	//------------------------------------------------
 
 	//http://localhost:5000/api/tests/'equipment'
 	getTest: (req, res) => {
@@ -40,9 +40,9 @@ const controllers = {
 			res.json(rows);
 		});
 	},
-//----------------------------------------------------
+	//----------------------------------------------------
 	// http://localhost:5000/api/tests/'equipment'/5
-	
+
 	// respond:
 	/* [
 		{
@@ -68,10 +68,10 @@ const controllers = {
 			res.json(rows);
 		});
 	},
-//---------------------------------------------
-// http://localhost:5000/api/tests/question/'equipment'/5
-// respond
-/* 	[
+	//---------------------------------------------
+	// http://localhost:5000/api/tests/question/'equipment'/5
+	// respond
+	/* 	[
 		{
 			"text": "No",
 			"audio": "Audio-16",
@@ -96,7 +96,7 @@ const controllers = {
 	getQuestion: (req, res) => {
 		const testName = req.params.testName;
 		const situation = req.params.situation;
-		const sql = `SELECT q.text as text , q.audio , q.explanation , o.text as answer FROM question q
+		const sql = `SELECT q.questionId , q.text as text , q.audio , q.explanation , o.text as answer FROM question q
                 LEFT JOIN situation s
                 on q.situationId = s.situationId
                 LEFT JOIN test t
@@ -114,22 +114,22 @@ const controllers = {
 			res.json(rows);
 		});
 	},
-//------------------------------------------------
-// http://localhost:5000/api/tests/result/'equipment'
-// post body 
-// {
-// 	"userAnswer" : [
-// 		{ "situationId": 4, "answer": 1 },
-// 		{ "situationId": 4, "answer": 1 },
-// 		{ "situationId": 4, "answer": 1 }
-// 	]
-// }
+	//------------------------------------------------
+	// http://localhost:5000/api/tests/result/'equipment'
+	// post body
+	// {
+	// 	"userAnswer" : [
+	// 		{ "situationId": 4, "answer": 1 },
+	// 		{ "situationId": 4, "answer": 1 },
+	// 		{ "situationId": 4, "answer": 1 }
+	// 	]
+	// }
 
 	getAnswer: (req, res) => {
 		debugger;
 		const testName = req.params.testName;
 		const userAnswers = req.body.userAnswer;
-		const sql = `SELECT q.correctOption , s.situationId FROM question q
+		const sql = `SELECT q.correctOption, q.questionId as questionId , s.situationId FROM question q
                 LEFT JOIN situation s
                 on s.situationId = q.situationId
                 LEFT JOIN test t
@@ -144,27 +144,26 @@ const controllers = {
 			}
 			// find the question number in the test
 			let testLength = 0;
-			rows.forEach(el => el.situationId > testLength ? testLength = el.situationId : testLength);
+			rows.forEach((el) => (el.situationId > testLength ? (testLength = el.situationId) : testLength));
 
 			const result = Array(testLength).fill(null);
-			for (let i = 1; i <= testLength; i++) {
 
+			for (let i = 1; i <= testLength; i++) {
 				// find each situation
+				let isCorr = true;
 				let situation = rows.filter((question) => Number(question.situationId) === i);
-				
+
 				// find user answer for this situation
 				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === i);
-				if(user_answer.length === situation.length){
-					let isCorr = true;
-					for (let j=0; j < situation.length ; j++){
-						if(situation[j].correctOption === user_answer[j].answer){
-							isCorr = isCorr && true ;
-						}else {
-							isCorr = false ;
-						}
-					}
-					result[i-1] = isCorr;
+				if (user_answer.length === situation.length) {
+					situation.map((el) => {
+						let userInput = user_answer.filter((ans) => Number(ans.questionId) === Number(el.questionId));
+						(Number(userInput.answer) === Number(el.correctOption))? isCorr && true : false;
+					});
+				} else {
+					isCorr = null;
 				}
+				result[i - 1] = isCorr;
 			}
 			res.json(result);
 		});

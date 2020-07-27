@@ -12,6 +12,7 @@ import Home from "./Home";
 // import Secret from "./Secret";
 // import Login from "./Login";
 import FreeTest from "./components/FreeTest/FreeTest";
+import ResultPage from "./components/Result/ResultPage"
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/freetest" component={FreeTest} />
+          <Route exact path="/result" component={ResultPage} />
           <Redirect to="/" />
         </Switch>
 

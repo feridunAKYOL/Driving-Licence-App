@@ -9,6 +9,8 @@ const FreeTest = () => {
   const [questions, setQuestions] = useState([]);
   const [userAnswer, setUserAnswer] = useState([]);
   const [testLength, setTestLength] = useState(null);
+  const [fileNames, setFileNames] = useState([]);
+  const [fileName, setFileName] = useState([]);
 
   const getAnswer = (idx, answerNo) => {
     if (typeof Storage !== 'undefined') {
@@ -40,6 +42,7 @@ const FreeTest = () => {
       alert('Sorry! No Web Storage support..');
     }
   };
+
    const goToNext = () => (
 
      situationNumber < testLength ? setSituationNumber(situationNumber+1) : situationNumber
@@ -48,6 +51,8 @@ const FreeTest = () => {
 
   useEffect(
     () => {
+
+
       const fetchSituation = () => {
         return fetch(`/api/tests/'equipment'/${situationNumber}`)
           .then((res) => res.json())
@@ -78,82 +83,100 @@ const FreeTest = () => {
         let count = gettingTotal.length;
         setTestLength(count);
       }); 
+
+
+      // Fetch file names
+      const fetchFileNames = () => {
+        return fetch(`/api/tests/filenames`)
+          .then((res) => res.json())
+          .then((data) => data);
+      };
+
+      fetchFileNames().then((data) => {
+        setFileNames(data);
+      })
     },
-    [situationNumber]
+    []
   );
 
   return (
     <>
-      <TestNavbar situationNo = {situationNumber} testLength = {testLength} />
+      <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test">
         <Row className="test-part">
           <Col xs={1}></Col>
           <Col xs={8} md={9}>
-          {situation.map((situation_img, id) => (
-            <Image
-              src = {situation_img.image}
-              rounded
-              className="image-situation  my-2"
-              key ={id}
-            />
-          )
-          )}
+            {fileNames.filter((el) =>
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
+            ).map((img) => (
+              <Image
+                src={img.fileRelativePath } //{situation_img.image}
+                rounded
+                className="image-situation  my-2"
+                key={img.situationNumber}
+              />
+            ))}
           </Col>
           <Col xs={1} md={2}>
             <Image
               src="/assets/next2.jpeg"
               roundedCircle
               className="next-button"
-              onClick={() => goToNext()}
+              onClick={() => goToNext() }
             />
           </Col>
         </Row>
-          <Col>
-            <Row className="situation ml-3">
-              {situation.map((text, id) => <h3 key={id}>{text.situation}</h3>)}
-            </Row>
+        <Col>
+          <Row className="situation ml-3">
+            {situation.map((text, id) => (
+              <h3 key={id}>{text.situation}</h3>
+            ))}
+          </Row>
 
-            {questions.map((question)=>(
-              <Row key={question.questionId} className = " ml-3">
-                <Col className="questions" xs={8} md={10} key={question.questionId}>
-                  <h4 key={question.questionId}>{question.text}</h4>
-                </Col>
-                <Col key={question.questionId+1}>
+          {questions.map((question) => (
+            <Row key={question.questionId} className=" ml-3">
+              <Col
+                className="questions"
+                xs={8}
+                md={10}
+                key={question.questionId}
+              >
+                <h4 key={question.questionId}>{question.text}</h4>
+              </Col>
+              <Col key={question.questionId + 1}>
                 <div className="form-check form-check-inline check-box" xs={1}>
                   <input
                     className="form-check-input"
                     type="radio"
-                      id={`inlineRadio${question.questionId}`}
+                    id={`inlineRadio${question.questionId}`}
                     value="option1"
-                      onChange={() => getAnswer(question.questionId, 1)}
-
+                    onChange={() => getAnswer(question.questionId, 1)}
                   />
                   <label className="form-check-label" for="inlineRadio1">
                     Yes
-                </label>
+                  </label>
                 </div>
                 <div className="form-check form-check-inline check-box" xs={1}>
                   <input
                     className="form-check-input"
                     type="radio"
-                      id={`inlineRadio${question.questionId+1}`}
+                    id={`inlineRadio${question.questionId + 1}`}
                     value="option2"
-                      onChange={() => getAnswer(question.questionId, 2)}
-
+                    onChange={() => getAnswer(question.questionId, 2)}
                   />
                   <label className="form-check-label" for="inlineRadio2">
                     No
-                </label>
+                  </label>
                 </div>
-                </Col>
-              </Row>
-            ))}
-          </Col>
+              </Col>
+            </Row>
+          ))}
+        </Col>
       </Container>
       <ul>
         {userAnswer.map((a) => (
           <li key={a.questionId}>
-            {a.questionId} --> {a.answer} 
+            {/* {a.questionId} --> {a.answer} */}
           </li>
         ))}
       </ul>

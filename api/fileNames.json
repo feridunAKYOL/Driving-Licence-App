@@ -5,14 +5,44 @@
     "situationNumber": "1"
   },
   {
+    "fileRelativePath": "/assets/tests/test-1/10/2013_04_20_10_27_59IMG_2869---Kopi.jpg",
+    "testName": "test-1",
+    "situationNumber": "10"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/11/2012_10_23_07_56_02novaIMG_5102.jpg",
+    "testName": "test-1",
+    "situationNumber": "11"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/12/2013_04_17_12_43_36nova2012_11_17_06_00_472012_10_26_11_45_54novaIMG_5908.jpg",
+    "testName": "test-1",
+    "situationNumber": "12"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-1/13/2013_01_12_10_36_29IMG_3837.jpeg",
     "testName": "test-1",
     "situationNumber": "13"
   },
   {
+    "fileRelativePath": "/assets/tests/test-1/14/2013_01_12_10_45_02novaIMG_1008.jpg",
+    "testName": "test-1",
+    "situationNumber": "14"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/15/2013_01_12_10_50_21nIMG_5914.jpg",
+    "testName": "test-1",
+    "situationNumber": "15"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-1/16/2013_04_23_06_39_03IMG_4313.jpeg",
     "testName": "test-1",
     "situationNumber": "16"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/17/2013_01_12_11_22_15nIMG_3062.jpg",
+    "testName": "test-1",
+    "situationNumber": "17"
   },
   {
     "fileRelativePath": "/assets/tests/test-1/18/2011_08_05_12_18_01IMG_2944.jpeg",
@@ -25,9 +55,29 @@
     "situationNumber": "19"
   },
   {
+    "fileRelativePath": "/assets/tests/test-1/2/2013_04_20_09_58_59najnnfoto--43-.jpg",
+    "testName": "test-1",
+    "situationNumber": "2"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-1/20/2011_08_27_10_50_22IMG_1262.jpeg",
     "testName": "test-1",
     "situationNumber": "20"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/21/2012_10_23_08_17_49novaIMG_5858.jpg",
+    "testName": "test-1",
+    "situationNumber": "21"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/22/2013_01_13_10_09_55nIMG_2703.jpg",
+    "testName": "test-1",
+    "situationNumber": "22"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/23/2012_10_23_08_26_15novaIMG_6703.jpg",
+    "testName": "test-1",
+    "situationNumber": "23"
   },
   {
     "fileRelativePath": "/assets/tests/test-1/24/2012_10_23_08_34_57IMG_6801.jpeg",
@@ -35,9 +85,19 @@
     "situationNumber": "24"
   },
   {
+    "fileRelativePath": "/assets/tests/test-1/25/2013_02_05_03_29_08nIMG_3897.jpg",
+    "testName": "test-1",
+    "situationNumber": "25"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-1/3/2013_03_12_06_02_36IMG_3617.jpeg",
     "testName": "test-1",
     "situationNumber": "3"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-1/4/2013_01_12_10_07_03nIMG_0201.jpg",
+    "testName": "test-1",
+    "situationNumber": "4"
   },
   {
     "fileRelativePath": "/assets/tests/test-1/5/2012_09_04_12_22_54IMG_2760.jpeg",
@@ -65,9 +125,29 @@
     "situationNumber": "9"
   },
   {
+    "fileRelativePath": "/assets/tests/test-2/1/2015_01_27_03_26_0820141205_123346.jpg",
+    "testName": "test-2",
+    "situationNumber": "1"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/10/2013_01_13_10_48_23nIMG_5113.jpg",
+    "testName": "test-2",
+    "situationNumber": "10"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-2/11/2012_05_18_11_39_29IMG_3609.jpeg",
     "testName": "test-2",
     "situationNumber": "11"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/12/2016_03_11_03_37_14IMG_3027nova2.jpg",
+    "testName": "test-2",
+    "situationNumber": "12"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/13/2012_10_23_09_33_27novaIMG_0829.jpg",
+    "testName": "test-2",
+    "situationNumber": "13"
   },
   {
     "fileRelativePath": "/assets/tests/test-2/14/2013_01_13_10_50_02IMG_3832.jpeg",
@@ -75,9 +155,29 @@
     "situationNumber": "14"
   },
   {
+    "fileRelativePath": "/assets/tests/test-2/15/2013_01_13_10_55_07nIMG_5835.jpg",
+    "testName": "test-2",
+    "situationNumber": "15"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/16/2013_01_13_11_14_26nIMG_3320.jpg",
+    "testName": "test-2",
+    "situationNumber": "16"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/17/2012_10_23_09_41_24novaIMG_5342.jpg",
+    "testName": "test-2",
+    "situationNumber": "17"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-2/18/2012_10_23_09_44_00IMG_5671.jpeg",
     "testName": "test-2",
     "situationNumber": "18"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/19/2015_03_09_09_17_132887.jpg",
+    "testName": "test-2",
+    "situationNumber": "19"
   },
   {
     "fileRelativePath": "/assets/tests/test-2/2/2013_01_13_10_15_35IMG_5910.jpeg",
@@ -85,9 +185,29 @@
     "situationNumber": "2"
   },
   {
+    "fileRelativePath": "/assets/tests/test-2/20/2013_02_19_11_32_08nIMG_3314.jpg",
+    "testName": "test-2",
+    "situationNumber": "20"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/21/2015_10_22_09_07_220990nova.jpg",
+    "testName": "test-2",
+    "situationNumber": "21"
+  },
+  {
     "fileRelativePath": "/assets/tests/test-2/22/2011_08_21_03_31_54IMG_3928.jpeg",
     "testName": "test-2",
     "situationNumber": "22"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/23/2013_01_13_12_26_59nIMG_3952.jpg",
+    "testName": "test-2",
+    "situationNumber": "23"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/24/2011_09_18_10_40_37IMG_4164ab.jpg",
+    "testName": "test-2",
+    "situationNumber": "24"
   },
   {
     "fileRelativePath": "/assets/tests/test-2/25/2011_06_24_02_07_07IMG_4915.jpeg",
@@ -108,6 +228,11 @@
     "fileRelativePath": "/assets/tests/test-2/5/2013_01_13_10_27_16IMG_5245.jpeg",
     "testName": "test-2",
     "situationNumber": "5"
+  },
+  {
+    "fileRelativePath": "/assets/tests/test-2/6/2013_01_13_10_35_01nIMG_5574--2-.jpg",
+    "testName": "test-2",
+    "situationNumber": "6"
   },
   {
     "fileRelativePath": "/assets/tests/test-2/7/2013_01_13_10_39_43IMG_7471.jpeg",

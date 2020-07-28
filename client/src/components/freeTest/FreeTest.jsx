@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Row, Col, Container } from "react-bootstrap";
+import { Image, Row, Col, Container, Button } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
 
@@ -52,8 +52,6 @@ const FreeTest = () => {
 
   useEffect(
     () => {
-
-
       const fetchSituation = () => {
         return fetch(`/api/tests/'equipment'/${situationNumber}`)
           .then((res) => res.json())
@@ -85,7 +83,6 @@ const FreeTest = () => {
         setTestLength(count);
       }); 
 
-
       // Fetch file names
       const fetchFileNames = () => {
         return fetch(`/api/tests/filenames`)
@@ -97,7 +94,7 @@ const FreeTest = () => {
         setFileNames(data);
       })
     },
-    []
+    [situationNumber]
   );
 
   return (
@@ -105,7 +102,6 @@ const FreeTest = () => {
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test">
         <Row className="test-part">
-          <Col xs={1}></Col>
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>
               Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
@@ -119,12 +115,9 @@ const FreeTest = () => {
             ))}
           </Col>
           <Col xs={1} md={2}>
-            <Image
-              src="/assets/next2.jpeg"
-              roundedCircle
-              className="next-button"
-              onClick={() => goToNext() }
-            />
+            <Button variant="info" className="next-button" onClick={() => goToNext()}>
+              Next Question
+            </Button>
           </Col>
         </Row>
         <Col>
@@ -135,17 +128,15 @@ const FreeTest = () => {
           </Row>
 
           {questions.map((question) => (
-            <Row key={question.questionId} className=" ml-3">
+            <Row key={question.questionId} className="ml-3" xs={8} >
               <Col
                 className="questions"
-                xs={8}
-                md={10}
                 key={question.questionId}
               >
                 <h4 key={question.questionId}>{question.text}</h4>
               </Col>
               <Col key={question.questionId + 1}>
-                <div className="form-check form-check-inline check-box" xs={1}>
+                <div className="form-check form-check-inline check-box" >
                   <input
                     className="form-check-input"
                     type="radio"
@@ -157,7 +148,7 @@ const FreeTest = () => {
                     Yes
                   </label>
                 </div>
-                <div className="form-check form-check-inline check-box" xs={1}>
+                <div className="form-check form-check-inline check-box" >
                   <input
                     className="form-check-input"
                     type="radio"

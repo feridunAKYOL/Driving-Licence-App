@@ -43,6 +43,8 @@ label {
 	flex: 1;
 	justify-content: flex-start;
 	align-items: center;
+	padding: 1vw;
+
 }
 .check-box {
 	background-color: #c9daf0;
@@ -50,7 +52,9 @@ label {
 	-moz-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
 	box-shadow: 0 0 2px 1px rgb(4, 64, 112);
 	padding: 1vw;
+
 }
 .next-button {
 	width: 12vw;
 }
+

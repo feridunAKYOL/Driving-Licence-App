@@ -43,19 +43,6 @@ const FreeTest = () => {
     }
   };
 
-  const doSomething = () => {
-      
-        if (situationNumber < testLength) {
-          setSituationNumber(situationNumber + 1);
-        }
-
-      let newObj = fileNames.find(obj => obj.situationNumber = situationNumber);
-      console.log(fileNames[0]);
-      console.log(situationNumber);
-      console.log(newObj);
-      setFileName(newObj.fileRelativePath);
-  }
-
    const goToNext = () => (
 
      situationNumber < testLength ? setSituationNumber(situationNumber+1) : situationNumber

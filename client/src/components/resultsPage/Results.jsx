@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Jumbotron, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ResultNavbar from "./ResultsNavbar";

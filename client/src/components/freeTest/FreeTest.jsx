@@ -20,7 +20,8 @@ const FreeTest = () => {
         if (isAnswered_before.length === 0) {
           let usr_answer = userAnswer.slice();
           usr_answer.push({ questionId: idx, answer: answerNo, situationId: situationNumber });
-          setUserAnswer(usr_answer);
+          let aa = usr_answer;
+          setUserAnswer(aa);
           window.localStorage.setItem('userAnswer', JSON.stringify(userAnswer));
         } else {
           let usr_answer = userAnswer.slice();
@@ -153,7 +154,7 @@ const FreeTest = () => {
       <ul>
         {userAnswer.map((a) => (
           <li key={a.questionId}>
-            {a.questionId} --> {a.answer} 
+            {a.questionId} --> {a.answer} {a.situationId}
           </li>
         ))}
       </ul>

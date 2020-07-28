@@ -10,7 +10,6 @@ const FreeTest = () => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [testLength, setTestLength] = useState(null);
   const [fileNames, setFileNames] = useState([]);
-  const [fileName, setFileName] = useState([]);
 
   const getAnswer = (idx, answerNo) => {
     if (typeof Storage !== 'undefined') {

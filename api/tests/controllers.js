@@ -110,7 +110,7 @@ const controllers = {
 	getQuestion: (req, res) => {
 		const testName = req.params.testName;
 		const situation = req.params.situation;
-		const sql = `SELECT s.situationId, q.questionId , q.text as text , q.audio , q.explanation , o.text as answer FROM question q
+		const sql = `SELECT q.questionId , q.text as text , q.audio , q.explanation , o.text as answer FROM question q
                 LEFT JOIN situation s
                 on q.situationId = s.situationId
                 LEFT JOIN test t
@@ -156,29 +156,34 @@ const controllers = {
 				res.status(400).json({ error: err.message });
 				return;
 			}
-			// find the question number in the test
-			let testLength = 0;
-			rows.forEach((el) => (el.situationId > testLength ? (testLength = el.situationId) : testLength));
+			
+			situations = [];
+			rows.forEach((el) => (
+				situations.includes(el.situationId) ? situations : situations.push(el.situationId)
+			));
 
-			const result = Array(testLength).fill(null);
+			//find the question number in the test
+			let testLength = situations.length;
 
-			for (let i = 1; i <= testLength; i++) {
-				// find each situation
-				let isCorr = true;
-				let situation = rows.filter((question) => Number(question.situationId) === i);
+			 const result = Array(testLength).fill(null);
 
-				// find user answer for this situation
-				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === i);
-				if (user_answer.length === situation.length) {
-					situation.map((el) => {
-						let userInput = user_answer.filter((ans) => Number(ans.questionId) === Number(el.questionId));
-						(Number(userInput.answer) === Number(el.correctOption))? isCorr && true : false;
-					});
-				} else {
-					isCorr = false;
-				}
-				result[i-1] = {"result" :isCorr , "situation" : i};
-			}
+			 for (let i = 0; i <= testLength; i++) {
+			// 	// find each situation
+			 	let isCorr = true;
+			 	let situation = rows.filter((question) => Number(question.situationId) === situations[i]);
+
+			// 	// find user answer for this situation
+				 let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === situations[i]);
+				 
+			 	if (user_answer.length === situation.length) {
+					 for(let i=0 ; i < situation.length ; i++){
+						 (situation[i].correctOption === user_answer[i].answer) ? isCorr = isCorr && true : isCorr = false;
+					 }
+			 	} else {
+			 		isCorr = false;
+			 	}
+			 	result[i] = {"result" :isCorr , "situation" : situations[i]};
+			 }
 			res.json(result);
 		});
 	}

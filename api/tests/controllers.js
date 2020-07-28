@@ -175,9 +175,9 @@ const controllers = {
 						(Number(userInput.answer) === Number(el.correctOption))? isCorr && true : false;
 					});
 				} else {
-					isCorr = null;
+					isCorr = false;
 				}
-				result[i - 1] = isCorr;
+				result[i-1] = {"result" :isCorr , "situation" : i};
 			}
 			res.json(result);
 		});

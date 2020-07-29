@@ -1,16 +1,13 @@
 .tutorials {
-  height: 100%;
-  margin: 0;
   font-family: "Rowdies", cursive;
 }
-.cards-container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+@media only screen and (max-width: 600px) {
+  .video-section {
+    margin-left: 125px;
+  }
 }
-.cards {
-  border: solid 4px grey;
-  justify-content: center;
-  align-items: center;
+@media only screen and (min-width: 600px) {
+  .first-video {
+    margin-left: 3vw;
+  }
 }

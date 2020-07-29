@@ -99,7 +99,7 @@ const FreeTest = () => {
   return (
     <>
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
-      <Container className="free-test">
+      <Container className="free-test" align="center">
         <Row className="test-part">
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>

@@ -99,7 +99,7 @@ const FreeTest = () => {
   return (
     <>
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
-      <Container className="free-test">
+      <Container className="free-test" align="center">
         <Row className="test-part">
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>
@@ -126,7 +126,7 @@ const FreeTest = () => {
             ))}
           </Row>
 
-          {questions.map((question) => (
+          {questions.map((question, id) => (
             <Row key={question.questionId} className="ml-3" xs={8} >
               <Col
                 className="questions"
@@ -139,6 +139,7 @@ const FreeTest = () => {
                   <input
                     className="form-check-input"
                     type="radio"
+                    name={id}
                     id={`inlineRadio${question.questionId}`}
                     value="option1"
                     onChange={() => getAnswer(question.questionId, 1)}
@@ -151,6 +152,7 @@ const FreeTest = () => {
                   <input
                     className="form-check-input"
                     type="radio"
+                    name={id}
                     id={`inlineRadio${question.questionId + 1}`}
                     value="option2"
                     onChange={() => getAnswer(question.questionId, 2)}
@@ -168,7 +170,7 @@ const FreeTest = () => {
         {userAnswer.map((a) => (
           <li key={a.questionId}>
 
-            {a.questionId} --> {a.answer} --> {a.situationId}
+            {/* {a.questionId} --> {a.answer} --> {a.situationId} */}
 
           </li>
         ))}

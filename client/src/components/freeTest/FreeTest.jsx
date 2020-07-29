@@ -168,7 +168,7 @@ const FreeTest = () => {
         {userAnswer.map((a) => (
           <li key={a.questionId}>
 
-            {a.questionId} --> {a.answer} --> {a.situationId}
+            {/* {a.questionId} --> {a.answer} --> {a.situationId} */}
 
           </li>
         ))}

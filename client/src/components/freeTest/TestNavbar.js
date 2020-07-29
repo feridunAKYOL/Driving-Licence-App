@@ -26,7 +26,7 @@ const TestNavbar = ({ situationNo, testLength }) => {
 					<Navbar.Brand href="/">
 						<Button variant="light">Home</Button>{' '}
 					</Navbar.Brand>
-					<Navbar.Brand href="/result">
+					<Navbar.Brand href="/results">
 						<Button variant="light">Exit and See The Results</Button>{' '}
 					</Navbar.Brand>
 				</Navbar>

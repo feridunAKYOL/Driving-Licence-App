@@ -144,7 +144,7 @@ const FreeTest = () => {
                     value="option1"
                     onChange={() => getAnswer(question.questionId, 1)}
                   />
-                  <label className="form-check-label" for="inlineRadio1">
+                  <label className="form-check-label" htmlFor="inlineRadio1">
                     Yes
                   </label>
                 </div>
@@ -157,7 +157,7 @@ const FreeTest = () => {
                     value="option2"
                     onChange={() => getAnswer(question.questionId, 2)}
                   />
-                  <label className="form-check-label" for="inlineRadio2">
+                  <label className="form-check-label" htmlFor="inlineRadio2">
                     No
                   </label>
                 </div>

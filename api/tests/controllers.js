@@ -167,7 +167,7 @@ const controllers = {
 
 			 const result = Array(testLength).fill(null);
 
-			 for (let i = 0; i <= testLength; i++) {
+			 for (let i = 0; i < testLength; i++) {
 			// 	// find each situation
 			 	let isCorr = true;
 			 	let situation = rows.filter((question) => Number(question.situationId) === situations[i]);
@@ -176,13 +176,13 @@ const controllers = {
 				 let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === situations[i]);
 				 
 			 	if (user_answer.length === situation.length) {
-					 for(let i=0 ; i < situation.length ; i++){
-						 (situation[i].correctOption === user_answer[i].answer) ? isCorr = isCorr && true : isCorr = false;
+					 for(let j=0 ; j < situation.length ; j++){
+						 (situation[j].correctOption === user_answer[j].answer) ? isCorr = isCorr && true : isCorr = false;
 					 }
 			 	} else {
 			 		isCorr = false;
 			 	}
-			 	result[i] = {"result" :isCorr , "situation" : situations[i]};
+			 	result[i] = {"result" :isCorr , "situationNumber" : situations[i]};
 			 }
 			res.json(result);
 		});

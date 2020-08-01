@@ -120,21 +120,21 @@ const FreeTest = () => {
           </Col>
         </Row>
         <Col>
-          <Row className="situation ml-3">
+          <Row className="situation ">
             {situation.map((text, id) => (
               <h3 key={id}>{text.situation}</h3>
             ))}
           </Row>
 
           {questions.map((question, id) => (
-            <Row key={question.questionId} className="ml-3" xs={8} >
+            <Row key={question.questionId}  xs={7}  >
               <Col
                 className="questions"
                 key={question.questionId}
               >
                 <h4 key={question.questionId}>{question.text}</h4>
               </Col>
-              <Col key={question.questionId + 1}>
+              <Col key={question.questionId + 1} xs={3} md={3}>
                 <div className="form-check form-check-inline check-box" >
                   <input
                     className="form-check-input"

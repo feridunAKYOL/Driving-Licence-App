@@ -15,8 +15,7 @@ const Cards = () => {
             <Card.Body>
               <Card.Title>Online Tutorials</Card.Title>
               <Card.Text>
-                With the online tutorials you learn lots of things. You can
-                imagine you as a driver while watching the videos.
+                With the online tutorials you learn a lot of thing different things. You can imagine you as a driver while watching the videos.
               </Card.Text>
               <Button variant="success">Videos</Button>
             </Card.Body>

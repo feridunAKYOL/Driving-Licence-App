@@ -1,17 +1,14 @@
 import React from "react";
 import "./Cards.css";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <h2 className="text-center" variant="info">
-            How We Work
-          </h2>
-        </Col>
-      </Row>
+    <>
+      <h2 className="text-center" variant="info">
+        How We Work
+      </h2>
       <Row className="practice-text">
         <Col className="m-3" xs={11} md={3}>
           <Card>
@@ -19,10 +16,11 @@ const Cards = () => {
             <Card.Body>
               <Card.Title>Online Tutorials</Card.Title>
               <Card.Text>
-                With the online tutorials you learn lots of things. You can
-                imagine you as a driver while watching the videos.
+                With the online tutorials you learn a lot of thing different things. You can imagine you as a driver while watching the videos.
               </Card.Text>
-              <Button variant="success">Videos</Button>
+              <Link to="/tutorials">
+                <Button variant="success">Videos</Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -49,12 +47,14 @@ const Cards = () => {
                 The pages have been prepared to give you some of the most
                 important rules to remember before your theory test.
               </Card.Text>
-              <Button variant="success">Tips</Button>
+              <Link to="/drivingTips">
+                <Button variant="success">Tips</Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-    </Container>
+    </>
   );
 };
 

@@ -33,6 +33,7 @@ const TestNavbar = ({ situationNo, testLength }) => {
 			</Navbar.Collapse>
 		</Navbar>
 	);
+
 };
 
 export default TestNavbar;

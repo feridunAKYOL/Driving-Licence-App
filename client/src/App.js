@@ -6,14 +6,13 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-// import { Link, Route, Switch } from "react-router-dom";
-// import withAuth from "./withAuth";
 import Home from "./Home";
-// import Secret from "./Secret";
-// import Login from "./Login";
-import ResultPage from "./components/Result/ResultPage"
+
 import FreeTest from "./components/freeTest/FreeTest";
 import Result from "./components/resultsPage/Results";
+import OneResultPage from "./components/oneResultPage/OneResultPage";
+import Tutorials from "./components/tutorials/Tutorials";
+import DrivingTips from "./components/drivingTips/DrivingTips";
 
 class App extends Component {
   render() {
@@ -24,6 +23,9 @@ class App extends Component {
           <Route exact path="/freetest" component={FreeTest} />
           <Route exact path="/result" component={ResultPage} />
           <Route exact path="/results" component={Result} />
+          <Route exact path="/oneResultPage" component={OneResultPage} />
+          <Route exact path="/tutorials" component={Tutorials} />
+          <Route exact path="/drivingTips" component={DrivingTips} />
           <Redirect to="/" />
         </Switch>
       </Router>

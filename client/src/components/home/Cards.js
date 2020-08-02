@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cards.css";
 import { Row, Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   return (
@@ -17,7 +18,9 @@ const Cards = () => {
               <Card.Text>
                 With the online tutorials you learn a lot of thing different things. You can imagine you as a driver while watching the videos.
               </Card.Text>
-              <Button variant="success">Videos</Button>
+              <Link to="/tutorials">
+                <Button variant="success">Videos</Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -44,7 +47,9 @@ const Cards = () => {
                 The pages have been prepared to give you some of the most
                 important rules to remember before your theory test.
               </Card.Text>
-              <Button variant="success">Tips</Button>
+              <Link to="/drivingTips">
+                <Button variant="success">Tips</Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>

@@ -46,7 +46,7 @@ const DrivingTips = () => {
           <Image
             src="/assets/speedRestrictions.jpg"
             width="500vw"
-            height="300vh"
+            height="650vh"
             className="image-hover"
           />
         </Col>

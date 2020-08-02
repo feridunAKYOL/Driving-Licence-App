@@ -27,15 +27,7 @@ h4 {
   align-items: center;
   margin: 30px;
 }
-.image-hover:hover {
-  position: relative;
-  top: -25px;
-  left: -15px;
-  width: 500px;
-  height: auto;
-  display: block;
-  z-index: 999;
-}
+
 @media only screen and (max-width: 600px) {
   .order1 {
     -webkit-order: 1;
@@ -60,5 +52,9 @@ h4 {
   }
   .order8 {
     -webkit-order: 8;
+  }
+  .image-hover {
+    width: 500px;
+    height: auto;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ResultNavbar = () => {
+const ResultsNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
       <Navbar.Brand>
@@ -28,4 +28,4 @@ const ResultNavbar = () => {
   );
 };
 
-export default ResultNavbar;
+export default ResultsNavbar;

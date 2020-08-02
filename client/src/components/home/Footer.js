@@ -10,9 +10,11 @@ const Footer = () => {
       variant="footer"
       className="justify-content-center mt-5 footer"
     >
-      <Navbar.Brand>CopyRight©2020 Alright Reserved WebWinners</Navbar.Brand>
+      <Navbar.Brand style={{ fontSize: "1rem" }}>
+        CopyRight©2020 Alright Reserved WebWinners
+      </Navbar.Brand>
     </Navbar>
   );
 };
 
-export default Footer; 
+export default Footer;

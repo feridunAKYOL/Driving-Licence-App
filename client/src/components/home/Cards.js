@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Cards = () => {
   return (
     <>
-      <h2 className="text-center" variant="info">
+      <h2 className="text-center" variant="info" style={{ fontSize: "2.2rem" }}>
         How We Work
       </h2>
       <Row className="practice-text">
@@ -16,7 +16,9 @@ const Cards = () => {
             <Card.Body>
               <Card.Title>Online Tutorials</Card.Title>
               <Card.Text>
-                With the online tutorials you learn a lot of thing different things. You can imagine you as a driver while watching the videos.
+                With the online tutorials you learn a lot of thing different
+                things. You can imagine you as a driver while watching the
+                videos.
               </Card.Text>
               <Link to="/tutorials">
                 <Button variant="success">Videos</Button>

@@ -58,7 +58,12 @@ const Result = () => {
             >
               <Row className="justify-content-center">{obj.situationNumber}</Row>
               <Row className="justify-content-center">
-                <Link to="/oneResultPage">
+                <Link to = {{
+                  pathname : '/oneResultPage',
+                  situation :{
+                    situationNo : `${obj.situationNumber}`
+                  } 
+                }}  >
                   <Image key={id} src={obj.fileRelativePath} height="180px" width="180px" className="p-2" />
                   {" "}
                 </Link>

@@ -5,7 +5,7 @@ import Practice from "./components/home/Practice";
 import Footer from "./components/home/Footer";
 import CustomNavbar from "./components/home/CustomNavbar";
 
-export default class Home extends Component {
+export default class Landing extends Component {
   constructor() {
     super();
     this.state = {

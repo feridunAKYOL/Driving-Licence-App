@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-import Home from "./Home";
+import Landing from "./Landing";
 
 import FreeTest from "./components/freeTest/FreeTest";
 import Result from "./components/resultsPage/Results";
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={ Landing } />
           <Route exact path="/freetest" component={FreeTest} />
           <Route exact path="/results" component={Result} />
           <Route exact path="/oneResultPage" component={OneResultPage} />

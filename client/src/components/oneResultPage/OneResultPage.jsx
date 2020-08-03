@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Row, Col, Container, Button } from "react-bootstrap";
 import "./OneResultPage.css" ;
-import ResultNavbar from "./ResultNavbar";
+import TestNavbar from "../freeTest/TestNavbar";
 
 const OneResultPage = (props) => {
   const [situationNumber, setSituationNumber] = useState(props.location.situation.situationNo);
@@ -95,7 +95,7 @@ const OneResultPage = (props) => {
 
   return (
     <>
-      <ResultNavbar situationNo={situationNumber} testLength={testLength} />
+      <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test" align="center">
         <Row className="test-part">
 

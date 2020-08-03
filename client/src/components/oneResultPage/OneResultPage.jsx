@@ -45,16 +45,6 @@ const OneResultPage = (props) => {
   //   }
    //};
 
-  const goToNext = () => (
-
-    situationNumber < testLength ? setSituationNumber(situationNumber + 1) : situationNumber
-  )
-
-  const goToBack = () => (
-
-    situationNumber > 1 ? setSituationNumber(situationNumber - 1) : situationNumber
-  )
-
 
   useEffect(
     () => {
@@ -69,7 +59,7 @@ const OneResultPage = (props) => {
       });
 
       const fetchQuestion = () => {
-        return fetch(`/api/tests/question/'equipment'/${situationNumber}`)
+        return fetch(`/api/tests/question/'equipment'/${props.location.situation.situationNo}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -109,12 +99,6 @@ const OneResultPage = (props) => {
       <Container className="free-test" align="center">
         <Row className="test-part">
 
-          <Col xs={1} md={2}>
-            <Button variant="info" className="next-button" onClick={() => goToBack()}>
-              Previous Question
-            </Button>
-          </Col>  
-
           <Col xs={8} md={8}>
             {fileNames.filter((el) =>
               Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
@@ -126,11 +110,6 @@ const OneResultPage = (props) => {
                 key={img.situationNumber}
               />
             ))}
-          </Col>
-          <Col xs={1} md={2}>
-            <Button variant="info" className="next-button" onClick={() => goToNext()}>
-              Next Question
-            </Button>
           </Col>
         </Row>
         <Col>

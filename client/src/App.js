@@ -14,6 +14,9 @@ import OneResultPage from "./components/oneResultPage/OneResultPage";
 import Tutorials from "./components/tutorials/Tutorials";
 import DrivingTips from "./components/drivingTips/DrivingTips";
 
+// import Signup component
+import Signup from "./components/SignUp/SignUp";
+
 class App extends Component {
   render() {
     return (
@@ -25,6 +28,7 @@ class App extends Component {
           <Route exact path="/oneResultPage" component={OneResultPage} />
           <Route exact path="/tutorials" component={Tutorials} />
           <Route exact path="/drivingTips" component={DrivingTips} />
+          <Route exact path="/newUser" component={ Signup } />
           <Redirect to="/" />
         </Switch>
       </Router>

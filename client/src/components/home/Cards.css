@@ -1,4 +1,17 @@
-h2 {
-  color: #019286;
+.how {
+  color: #212f3c;
   font-family: "Rowdies", cursive;
+  margin-top: 70px;
+}
+.card-text {
+  color: rgb(73, 74, 77);
+  font-family: "Rowdies", cursive;
+  font-size: 1.4rem;
+}
+.coaching {
+  font-size: 3rem;
+}
+h1 {
+  font-family: "Rowdies", cursive;
+  font-size: 7rem;
 }

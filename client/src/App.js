@@ -13,6 +13,7 @@ import Result from "./components/resultsPage/Results";
 import OneResultPage from "./components/oneResultPage/OneResultPage";
 import Tutorials from "./components/tutorials/Tutorials";
 import DrivingTips from "./components/drivingTips/DrivingTips";
+import ContactUs from "./components/contactUs/ContactUs";
 
 class App extends Component {
   render() {
@@ -25,6 +26,8 @@ class App extends Component {
           <Route exact path="/oneResultPage" component={OneResultPage} />
           <Route exact path="/tutorials" component={Tutorials} />
           <Route exact path="/drivingTips" component={DrivingTips} />
+          <Route exact path="/contactUs" component={ContactUs} />
+
           <Redirect to="/" />
         </Switch>
       </Router>

@@ -1,14 +1,14 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import DrivingNavbar from "../drivingTips/DrivingNavbar";
+import CustomNavbar from "../home/CustomNavbar";
 import ContactPart from "./ContactPart";
 import Footer from "../home/Footer";
 
 const ContactUs = () => {
   return (
     <>
-      <DrivingNavbar />
-      <h1 className="mt-5 ml-5">WebWinners Driving School</h1>
+      <CustomNavbar />
+      <h1 className="header-tips ml-5">WebWinners Driving School</h1>
       <Row xs={10} className="justify-content-center m-5">
         <iframe
           scrolling="no"

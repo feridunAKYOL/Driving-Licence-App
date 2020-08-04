@@ -3,7 +3,7 @@ import { Image, Row, Col, Container, Button } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
 
-const FreeTest = () => {
+const FreeTest = (props) => {
   const [situationNumber, setSituationNumber] = useState(1);
   const [situation, setSituation] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -52,7 +52,7 @@ const FreeTest = () => {
   useEffect(
     () => {
       const fetchSituation = () => {
-        return fetch(`/api/tests/'equipment'/${situationNumber}`)
+        return fetch(`/api/tests/'${props.location.tests.testName}'/${situationNumber}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -62,7 +62,7 @@ const FreeTest = () => {
       });
 
       const fetchQuestion = () => {
-        return fetch(`/api/tests/question/'equipment'/${situationNumber}`)
+        return fetch(`/api/tests/question/'${props.location.tests.testName}'/${situationNumber}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -72,7 +72,7 @@ const FreeTest = () => {
       });
       // Total situation count
       const fetchSituationCount = () => {
-        return fetch(`/api/tests/'equipment'`)
+        return fetch(`/api/tests/'${props.location.tests.testName}'`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -103,7 +103,7 @@ const FreeTest = () => {
         <Row className="test-part">
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>
-              Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === props.location.tests.testName
             ).map((img) => (
               <Image
                 src={img.fileRelativePath } //{situation_img.image}

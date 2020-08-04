@@ -20,7 +20,7 @@ const CustomNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/tutorials">Tutorials</Nav.Link>
-          <Nav.Link href="/freetest">Take Practice Test</Nav.Link>
+          <Nav.Link href="/tests">Take Tests</Nav.Link>
           <Nav.Link href="/contactUs">Contact Us</Nav.Link>
         </Nav>
         <Form inline>

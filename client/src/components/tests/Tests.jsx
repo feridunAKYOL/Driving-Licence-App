@@ -24,7 +24,7 @@ const Tests = () => {
                           tests: {
                             testName: `${obj.filename}`
                           }
-                        }} onClick = {() => window.localStorage.setItem("testN" , obj.filename)} >
+                        }} onClick = {() => localStorage.setItem("testN" , obj.filename)} >
                           <Image key={id} src={obj.filePath} height="180px" width="180px" className="p-2" />   
                         {" "}</Link>
                       </Row>                    

@@ -47,7 +47,7 @@ const Result = () => {
       <Jumbotron fluid className="result-part">
         <Row className="picture-part">
           {fileNames.filter((obj) => 
-           obj.testName === 'test-1'
+           obj.testName === window.localStorage.getItem('testN')
           )
           .sort((a, b) => Number(a.situationNumber) - Number(b.situationNumber))
           .map((obj, id) => (
@@ -58,7 +58,12 @@ const Result = () => {
             >
               <Row className="justify-content-center">{obj.situationNumber}</Row>
               <Row className="justify-content-center">
-                <Link to="/oneResultPage">
+                <Link to = {{
+                  pathname : '/oneResultPage',
+                  situation :{
+                    situationNo : `${obj.situationNumber}`
+                  } 
+                }}  >
                   <Image key={id} src={obj.fileRelativePath} height="180px" width="180px" className="p-2" />
                   {" "}
                 </Link>

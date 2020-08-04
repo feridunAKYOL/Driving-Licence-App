@@ -10,7 +10,7 @@ const FreeTest = (props) => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [testLength, setTestLength] = useState(null);
   const [fileNames, setFileNames] = useState([]);
-  const [test, setTest] = useState(window.localStorage.getItem('testN'));
+  const [test, setTest] = useState(localStorage.getItem('testN'));
 
   const getAnswer = (idx, answerNo) => {
     if (typeof Storage !== 'undefined') {
@@ -80,8 +80,9 @@ const FreeTest = (props) => {
       };
       //console.log(fetchQuestion());
       fetchSituationCount().then((gettingTotal) => {
-        let count = gettingTotal.length;
+        let count = gettingTotal.rows.length;
         setTestLength(count);
+        window.localStorage.setItem("firstSituationId" , gettingTotal.first);
       }); 
 
       // Fetch file names
@@ -95,7 +96,7 @@ const FreeTest = (props) => {
         setFileNames(data);
       })
     },
-    []
+    [situationNumber]
   );
 
   return (

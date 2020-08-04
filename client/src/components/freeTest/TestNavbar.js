@@ -22,14 +22,17 @@ const TestNavbar = ({ situationNo, testLength }) => {
       >
         <Navbar>
           <Navbar.Brand>
-            <h2 className="nav-position text-center mr-5">
+            <h2
+              className="nav-position text-center mr-5"
+              style={{ fontWeight: "bold" }}
+            >
               {situationNo} out of {testLength}
             </h2>
           </Navbar.Brand>
           <Navbar.Brand href="/results">
             <Button
               variant="light"
-              style={{ color: "#b5e2f7", fontWeight: "bold" }}
+              style={{ backgroundColor: "rgb(5, 94, 110)", color: " #b5e2f7" }}
             >
               End My Test
             </Button>

@@ -1,28 +1,28 @@
 import React from "react";
-import { Navbar, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ResultsNavbar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
-      <Navbar.Brand>
-        <h3 style={{ color: "blue" }}>Free Test Results</h3>
+    <Navbar bg="info" expand="lg" sticky="top" variant="dark">
+      <Navbar.Brand href="#home" active>
+        WebWinners
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Navbar className="mr-auto">
-          <Navbar.Brand>
-            <h4 className="mx-5">Web Winners</h4>
-          </Navbar.Brand>
-        </Navbar>
-        <Navbar>
-          <Navbar.Brand href="/">
-            <h3 className="mx-5">Home</h3>
-          </Navbar.Brand>
-          <Navbar.Brand href="/freetest">
-            <Button variant="light">Exit and Go To The Test</Button>{" "}
-          </Navbar.Brand>
-        </Navbar>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/tutorials">Tutorials</Nav.Link>
+          <Nav.Link href="/freetest">The Tests</Nav.Link>
+          <Nav.Link href="/contactUs">Contact Us</Nav.Link>
+        </Nav>
+        <Navbar.Brand href="/freetest">
+          <Button
+            variant="light"
+            style={{ color: "#24b8bd", fontWeight: "bold" }}
+          >
+            Return The Test
+          </Button>
+        </Navbar.Brand>
       </Navbar.Collapse>
     </Navbar>
   );

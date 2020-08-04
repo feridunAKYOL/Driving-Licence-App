@@ -1,19 +1,31 @@
 .free-test {
+<<<<<<< Updated upstream
 	height: 100%;
 	min-width: 100%;
 	margin: 0 auto;
 	font-family: "Rowdies", cursive;
 	font-size: 0.8rem;
 	background-color: rgb(252, 254, 255);
+=======
+  height: 100%;
+  min-width: 100%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  background-color: rgb(252, 254, 255);
+>>>>>>> Stashed changes
 }
 h1 {
 	color: rgb(0, 140, 255);
 }
 h3 {
+<<<<<<< Updated upstream
 	font-size: 2.8vh;
+=======
+  font-size: 2.4vh;
+>>>>>>> Stashed changes
 }
-h4,
 label {
+<<<<<<< Updated upstream
 	font-size: 2.2vh;
 }
 .test-part {
@@ -32,8 +44,42 @@ label {
 }
 .situation {
 	color: rgb(37, 71, 121);
+=======
+  font-size: 1.6vh;
+}
+.test-part {
+  max-width: 900px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.situation {
+  max-width: 900px;
+  color: rgb(37, 71, 121);
+>>>>>>> Stashed changes
+}
+.situation-part {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.question-part {
+  width: 1100px;
+  margin-left: 180px;
+}
+.image-situation {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 60vw;
+  object-fit: cover;
 }
 .questions {
+<<<<<<< Updated upstream
 	background-color: #c4d2df;
 	-webkit-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
 	-moz-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
@@ -64,4 +110,53 @@ label {
 		margin-left: 0;
 
 	}
+=======
+  background-color: #f8f9fa;
+  -webkit-box-shadow: 0 0 2px 1px rgb(194, 209, 221);
+  -moz-box-shadow: 0 0 2px 1px rgb(194, 209, 221);
+  box-shadow: 0 0 2px 1px rgb(194, 209, 221);
+  padding: 0.7rem;
+  margin-bottom: 0;
+}
+.questions-text {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 2.2vh;
+}
+.check-box {
+  background-color: #dde7f3;
+  -webkit-box-shadow: 0 0 2px 1px rgb(166, 210, 247);
+  -moz-box-shadow: 0 0 2px 1px rgb(166, 210, 247);
+  box-shadow: 0 0 2px 1px rgb(166, 210, 247);
+  padding: 1vw;
+}
+
+.form-check-inline {
+  margin-right: 0;
+}
+@media only screen and (min-width: 600px) {
+  .questions,
+  .situation {
+    margin-left: 80px;
+    margin-right: 0;
+  }
+  .check-box {
+    margin-left: 0;
+  }
+  .next {
+    width: 8vw;
+    height: 12vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .image-situation {
+    height: 40vh;
+    width: 55vw;
+  }
+  .check-box {
+    padding-right: 9px;
+  }
+>>>>>>> Stashed changes
 }

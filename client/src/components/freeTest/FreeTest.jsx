@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Image, Row, Col, Container, Button } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
+
 const FreeTest = (props) => {
   const [situationNumber, setSituationNumber] = useState(1);
   const [situation, setSituation] = useState([]);
@@ -10,6 +11,7 @@ const FreeTest = (props) => {
   const [testLength, setTestLength] = useState(null);
   const [fileNames, setFileNames] = useState([]);
   const [test, setTest] = useState(localStorage.getItem("testN"));
+
   const getAnswer = (idx, answerNo) => {
     if (typeof Storage !== "undefined") {
       //Code for localStorage/sessionStorage.
@@ -53,10 +55,12 @@ const FreeTest = (props) => {
       alert("Sorry! No Web Storage support..");
     }
   };
+
   const goToNext = () =>
     situationNumber < testLength
       ? setSituationNumber(situationNumber + 1)
       : situationNumber;
+
   useEffect(() => {
     const fetchSituation = () => {
       return fetch(`/api/tests/'${test}'/${situationNumber}`)
@@ -67,6 +71,7 @@ const FreeTest = (props) => {
     fetchSituation().then((gettingData) => {
       setSituation(gettingData);
     });
+
     const fetchQuestion = () => {
       return fetch(`/api/tests/question/'${test}'/${situationNumber}`)
         .then((res) => res.json())
@@ -88,16 +93,19 @@ const FreeTest = (props) => {
       setTestLength(count);
       window.localStorage.setItem("firstSituationId", gettingTotal.first);
     });
+
     // Fetch file names
     const fetchFileNames = () => {
       return fetch(`/api/tests/filenames`)
         .then((res) => res.json())
         .then((data) => data);
     };
+
     fetchFileNames().then((data) => {
       setFileNames(data);
     });
   }, [situationNumber]);
+
   return (
     <>
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
@@ -111,37 +119,33 @@ const FreeTest = (props) => {
                   el.testName === test
               )
               .map((img) => (
-                <Image
-                  src={img.fileRelativePath} //{situation_img.image}
-                  rounded
-                  className="image-situation  my-2"
-                  key={img.situationNumber}
-                />
+                <Row className="test-part">
+                  <Image
+                    src={img.fileRelativePath} //{situation_img.image}
+                    rounded
+                    className="image-situation  mb-2"
+                    key={img.situationNumber}
+                  />
+                </Row>
               ))}
           </Col>
-          <Col xs={1} md={2}>
-            <Button
-              variant="info"
-              className="next-button"
-              onClick={() => goToNext()}
-            >
-              Next Question
-            </Button>
-          </Col>
         </Row>
-        <Col>
-          <Row className="situation ">
-            {situation.map((text, id) => (
-              <h3 key={id}>{text.situation}</h3>
-            ))}
-          </Row>
-          {questions.map((question, id) => (
-            <Row key={question.questionId} xs={7}>
-              <Col className="questions" key={question.questionId}>
-                <h4 key={question.questionId}>{question.text}</h4>
-              </Col>
-              <Col key={question.questionId + 1} xs={3} md={3}>
-                <div className="form-check form-check-inline check-box">
+        <Row className="situation">
+          {situation.map((text, id) => (
+            <h3 key={id}>{text.situation}</h3>
+          ))}
+        </Row>
+        <Row>
+          <Col xs={{ span: 9, offset: 1 }}>
+            {questions.map((question, id) => (
+              <Row className="question-part" key={question.questionId}>
+                <Col xs={8} className="questions" key={question.questionId}>
+                  <p key={question.questionId} className="questions-text">
+                    {question.text}
+                  </p>
+                </Col>
+
+                <Col xs={1} className="form-check form-check-inline check-box">
                   <input
                     className="form-check-input"
                     type="radio"
@@ -153,8 +157,8 @@ const FreeTest = (props) => {
                   <label className="form-check-label" htmlFor="inlineRadio1">
                     Yes
                   </label>
-                </div>
-                <div className="form-check form-check-inline check-box">
+                </Col>
+                <Col xs={1} className="form-check form-check-inline check-box">
                   <input
                     className="form-check-input"
                     type="radio"
@@ -166,13 +170,17 @@ const FreeTest = (props) => {
                   <label className="form-check-label" htmlFor="inlineRadio2">
                     No
                   </label>
-                </div>
-              </Col>
-            </Row>
-          ))}
-        </Col>
+                </Col>
+              </Row>
+            ))}
+          </Col>
+          <Col xs={{ span: 2, offset: 0 }} className="next ">
+            <Image src="/assets/nextt.png" onClick={() => goToNext()}></Image>
+          </Col>
+        </Row>
       </Container>
     </>
   );
 };
+
 export default FreeTest;

@@ -18,14 +18,15 @@ const Tests = () => {
              <Jumbotron fluid className="result-part">
               <Row className="picture-part"> 
                  {fileNames.map((obj, id) => (
-                    <Col key={id} xs={5} md={3} lg={2} className="m-4 p-1">
+                   <Col key={id} xs={5} md={3} lg={2} className="m-4 p-1">
                       <Row className="justify-content-center">
-                        <Link to={{ 
+                        <Link to={
+                          { 
                           pathname: '/freetest',
                           tests: {
                             testName: `${obj.filename}`
                           }
-                        }}  >
+                        }} onClick = {() => window.localStorage.setItem("testN" , obj.filename)} >
                           <Image key={id} src={obj.filePath} height="180px" width="180px" className="p-2" />   
                         {" "}</Link>
                       </Row>                    
@@ -33,7 +34,7 @@ const Tests = () => {
                           <p> {obj.filename} </p>                    
                       </Row>                  
                     </Col>                
-                  ))}        
+                 ))}        
               </Row>      
             </Jumbotron>    
           </>

@@ -10,6 +10,7 @@ const FreeTest = (props) => {
   const [userAnswer, setUserAnswer] = useState([]);
   const [testLength, setTestLength] = useState(null);
   const [fileNames, setFileNames] = useState([]);
+  const [test, setTest] = useState(window.localStorage.getItem('testN'));
 
   const getAnswer = (idx, answerNo) => {
     if (typeof Storage !== 'undefined') {
@@ -51,8 +52,9 @@ const FreeTest = (props) => {
 
   useEffect(
     () => {
+
       const fetchSituation = () => {
-        return fetch(`/api/tests/'${props.location.tests.testName}'/${situationNumber}`)
+        return fetch(`/api/tests/'${test}'/${situationNumber}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -62,7 +64,7 @@ const FreeTest = (props) => {
       });
 
       const fetchQuestion = () => {
-        return fetch(`/api/tests/question/'${props.location.tests.testName}'/${situationNumber}`)
+        return fetch(`/api/tests/question/'${test}'/${situationNumber}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -72,7 +74,7 @@ const FreeTest = (props) => {
       });
       // Total situation count
       const fetchSituationCount = () => {
-        return fetch(`/api/tests/'${props.location.tests.testName}'`)
+        return fetch(`/api/tests/'${test}'`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -103,7 +105,7 @@ const FreeTest = (props) => {
         <Row className="test-part">
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>
-              Number(el.situationNumber) === Number(situationNumber) && el.testName === props.location.tests.testName
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === testLength
             ).map((img) => (
               <Image
                 src={img.fileRelativePath } //{situation_img.image}

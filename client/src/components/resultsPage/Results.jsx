@@ -47,7 +47,7 @@ const Result = () => {
       <Jumbotron fluid className="result-part">
         <Row className="picture-part">
           {fileNames.filter((obj) => 
-           obj.testName === 'test-1'
+           obj.testName === window.localStorage.getItem('testN')
           )
           .sort((a, b) => Number(a.situationNumber) - Number(b.situationNumber))
           .map((obj, id) => (

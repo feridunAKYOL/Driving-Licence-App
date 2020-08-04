@@ -1,25 +1,23 @@
 import React from "react";
-import { Row, Image, Card } from "react-bootstrap";
+import { Row, Image } from "react-bootstrap";
 import "./Picture.css";
 
 const Picture = () => {
   return (
     <>
-      <Image src="/assets/driversCourse.webp" className="first-image" xs={10} />
-      <Row className="justify-content-center">
-        <Card className="driver-card d-none d-md-block">
-          <Card.Body>
-            <Card.Title className="card-title">
-              Learn on your schedule
-            </Card.Title>
+      <Image src="/assets/driversCourse.webp" className="first-image" />
+      <Row className="driver-card d-none d-md-block">
+        {/* <Card className="driver-card d-none d-md-block"> */}
+        <h1 className="card-title">Learn on your schedule</h1>
 
-            <Card.Text className="card-text">
-              Anywhere, anytime.
-              <br /> Prepare for your driving license today!
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <h3 className="h-text">
+          Anywhere, anytime.
+          <br /> Prepare for your driving license today!
+        </h3>
       </Row>
+      <a href="#cards-part">
+        <Image src="/assets/bottom.png" className="go" roundedCircle />
+      </a>
     </>
   );
 };

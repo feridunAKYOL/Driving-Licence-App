@@ -3,12 +3,12 @@ The parts to be done is listed below. Please choose the issues you want and add 
 | Nu. | Issue | Person | 
 | --- | --- | --- |
 | 1 | 1. User Story: Home Page - Overview - Frontend | 1 →  Ayse |
-| 2 | 2. User Story: Sign up - Frontend | 1 → Thomas |
-| 3 | 2. User Story: Sign up - Backend | 2 → Thomas |
-| 4 | 3. User Story: Login - Frontend (already placed in homepage frontend) | 1 → |
-| 5 | 3. User Story: Login - Backend | 2 → |
-| 6 | 4. User Story: Logout - Frontend | 1 → |
-| 7 | 4. User Story: Logout - Backend | 1 → |
+| 2 | 2. User Story: Sign up - Frontend | 1 → Thomas, Mesut |
+| 3 | 2. User Story: Sign up - Backend | 2 → Thomas, Mesut |
+| 4 | 3. User Story: Login - Frontend (already placed in homepage frontend) | 1 → Mesut |
+| 5 | 3. User Story: Login - Backend | 2 → Mesut |
+| 6 | 4. User Story: Logout - Frontend | 1 → Mesut |
+| 7 | 4. User Story: Logout - Backend | 1 → Mesut |
 | 8 | 5. User Story: Recover/Reset Password - Frontend | 1 → |
 | 9 | 5. User Story: Recover/Reset Password - Backend | 2 → |
 | 10 | 6. User Story: User Page - Frontend | 1 → |

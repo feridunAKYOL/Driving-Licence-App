@@ -6,11 +6,9 @@ import TestsNavbar from "./TestsNavbar";
 import "./Tests.css";
 const Tests = () => {
   const [fileNames] = useState([ 
-    { filename: "equipment", filePath: "/assets/tests/1-Vehicle equipment and instruments/1/2015_01_27_03_26_0820141205_123346.jpg" },
-    { filename: "Commissioning" , filePath: "/assets/tests/2-Commissioning/1/2013_02_09_10_41_50IMG_1723.jpeg"}, 
-    { filename: "Location on the road", filePath: "/assets/tests/3-Location on the road/1/2013_04_20_09_58_59najnnfoto--43-.jpg" },
-    { filename: "test-1", filePath: "/assets/tests/test-1/1/2012_10_09_01_00_16IMG_3017.jpeg" },
-    { filename: "test-2", filePath: "/assets/tests/test-2/1/2015_01_27_03_26_0820141205_123346.jpg"} 
+    { filename: "Equipment", filePath: "/assets/tests/Equipment/1/2015_01_27_03_26_0820141205_123346.jpg" },
+    { filename: "Commissioning" , filePath: "/assets/tests/Commissioning/1/2013_02_09_10_41_50IMG_1723.jpeg"}, 
+    { filename: "Location_on_the_road", filePath: "/assets/tests/Location_on_the_road/1/2013_04_20_09_58_59najnnfoto--43-.jpg" },
    ]);
   return (
         <> 

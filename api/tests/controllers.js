@@ -39,7 +39,7 @@ const controllers = {
 	getTest: (req, res) => {
 		const testName = req.params.testName;
 		const sql = `
-					SELECT s.image 
+					SELECT s.image, s.situationId 
 					FROM test t
           			LEFT JOIN situation s
           				on t.testId = s.testId

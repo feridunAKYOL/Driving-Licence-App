@@ -95,7 +95,7 @@ const FreeTest = (props) => {
         setFileNames(data);
       })
     },
-    [situationNumber]
+    []
   );
 
   return (
@@ -105,7 +105,7 @@ const FreeTest = (props) => {
         <Row className="test-part">
           <Col xs={8} md={9}>
             {fileNames.filter((el) =>
-              Number(el.situationNumber) === Number(situationNumber) && el.testName === testLength
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === test
             ).map((img) => (
               <Image
                 src={img.fileRelativePath } //{situation_img.image}

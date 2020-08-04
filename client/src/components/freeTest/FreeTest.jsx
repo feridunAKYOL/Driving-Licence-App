@@ -169,15 +169,6 @@ const FreeTest = (props) => {
           ))}
         </Col>
       </Container>
-      <ul>
-        {userAnswer.map((a) => (
-          <li key={a.questionId}>
-
-            {/* {a.questionId} --> {a.answer} --> {a.situationId} */}
-
-          </li>
-        ))}
-      </ul>
     </>
   );
 };

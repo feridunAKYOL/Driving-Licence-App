@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactPart.css";
 import { Col, Row } from "react-bootstrap";
 
+
 const ContactPart = () => {
   return (
     <div className="contact-part">
@@ -29,9 +30,12 @@ const ContactPart = () => {
           </Row>
           <Row>
             <p>
-              <a href="/">linkedin.com/webwinners</a>
-              <br />
-              <a href="/">facebook.com/webwinners</a>
+              <a href="www.linkedin.com/webwinners"><i className="fab fa-linkedin" style={{ fontSize: '36px' }}></i></a>
+              <a href="www.linkedin.com/webwinners"><i class="fab fa-github-square" style={{ fontSize: '36px' }}></i></a>
+              <a href="www.linkedin.com/webwinners"><i class="fab fa-facebook-square" style={{ fontSize: '36px' }}></i></a>
+              <a href="www.linkedin.com/webwinners"><i class="fab fa-google-plus-square" style={{ fontSize: '36px' }}></i></a>
+              <a href="www.linkedin.com/webwinners"><i class="fab fa-instagram-square" style={{ fontSize: '36px' }}></i></a>
+              <a href="www.linkedin.com/webwinners"><i class="fab fa-twitter-square" style={{ fontSize: '36px' }}></i></a>
             </p>
           </Row>
         </Col>

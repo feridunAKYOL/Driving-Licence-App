@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Jumbotron, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -6,18 +5,17 @@ import ResultsNavbar from "./ResultsNavbar";
 import "./Results.css";
 
 const Result = () => {
-
   const [results, setResults] = useState([]);
   const [fileNames, setFileNames] = useState([]);
-  const userAnswer = JSON.parse(window.localStorage.getItem('userAnswer'));
-  const test = window.localStorage.getItem('testN');
+  const userAnswer = JSON.parse(window.localStorage.getItem("userAnswer"));
+  const test = window.localStorage.getItem("testN");
 
   //console.log(userAnswer);
   useEffect(() => {
     const request_result = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ "userAnswer": userAnswer })
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userAnswer: userAnswer }),
     };
     const fetchResult = () => {
       return fetch(`/api/tests/result/'${test}'`, request_result)
@@ -39,44 +37,67 @@ const Result = () => {
     fetchFileNames().then((data) => {
       setFileNames(data);
     });
-
   }, []);
   return (
     <>
       <ResultsNavbar />
       <Jumbotron fluid className="result-part">
         <Row className="picture-part">
-          {fileNames.filter((obj) =>
-            obj.testName === test
-          )
-            .sort((a, b) => Number(a.situationNumber) - Number(b.situationNumber))
-            .map((obj, id) => (
-              results.filter(el => (Number(el.situationNumber) - window.localStorage.getItem('firstSituationId') ) === Number(obj.situationNumber))
-                .map(a => (
-                  <Col key={id} xs={5} md={3} lg={2} className="m-4 p-1"
-                    style={a.result ? { border: "groove 3px green" } : { border: "groove 3px red" }}
+          {fileNames
+            .filter((obj) => obj.testName === test)
+            .sort(
+              (a, b) => Number(a.situationNumber) - Number(b.situationNumber)
+            )
+            .map((obj, id) =>
+              results
+                .filter(
+                  (el) =>
+                    Number(el.situationNumber) -
+                      window.localStorage.getItem("firstSituationId") ===
+                    Number(obj.situationNumber)
+                )
+                .map((a) => (
+                  <Col
+                    key={id}
+                    xs={5}
+                    md={3}
+                    lg={2}
+                    className="image-border m-4 p-1"
+                    style={
+                      a.result
+                        ? { border: "groove 3px green" }
+                        : { border: "groove 3px red" }
+                    }
                   >
-                    <Row className="justify-content-center">{obj.situationNumber}</Row>
                     <Row className="justify-content-center">
-                      <Link to={{
-                        pathname: '/oneResultPage',
-                        situation: {
-                          situationNo: `${obj.situationNumber}`
-                        }
-                      }}  >
-                        <Image key={id} src={obj.fileRelativePath} height="180px" width="180px" className="p-2" />
-                        {" "}
+                      {obj.situationNumber}
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Link
+                        to={{
+                          pathname: "/oneResultPage",
+                          situation: {
+                            situationNo: `${obj.situationNumber}`,
+                          },
+                        }}
+                      >
+                        <Image
+                          key={id}
+                          src={obj.fileRelativePath}
+                          width="280px"
+                          className="image-border p-2"
+                        />{" "}
                       </Link>
                     </Row>
                     <Row className="justify-content-center">
                       <p> {a.result ? "True" : "False"} </p>
                     </Row>
                   </Col>
-                ))))}
+                ))
+            )}
         </Row>
       </Jumbotron>
     </>
-
   );
 };
 

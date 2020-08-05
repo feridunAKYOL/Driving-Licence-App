@@ -4,6 +4,7 @@
   margin: 0 auto;
   font-size: 0.8rem;
   background-color: rgb(252, 254, 255);
+  line-height: 1.5rem;
 }
 h1 {
   color: rgb(0, 140, 255);
@@ -46,11 +47,8 @@ label {
 }
 .questions {
   background-color: #f8f9fa;
-  -webkit-box-shadow: 0 0 2px 1px rgb(194, 209, 221);
-  -moz-box-shadow: 0 0 2px 1px rgb(194, 209, 221);
-  box-shadow: 0 0 2px 1px rgb(194, 209, 221);
-  padding: 0.7rem;
   margin-bottom: 0;
+  padding: 0;
 }
 .questions-text {
   display: flex;
@@ -61,10 +59,6 @@ label {
 }
 .check-box {
   background-color: #dde7f3;
-  -webkit-box-shadow: 0 0 2px 1px rgb(166, 210, 247);
-  -moz-box-shadow: 0 0 2px 1px rgb(166, 210, 247);
-  box-shadow: 0 0 2px 1px rgb(166, 210, 247);
-  padding: 1vw;
 }
 
 .form-check-inline {

@@ -5,8 +5,6 @@ import Timer from "./Timer";
 import "./TestNavbar.css";
 
 const TestNavbar = ({ situationNo, testLength }) => {
-  let time = Number(testLength);
-  //console.log(time , "ne")
   return (
     <Navbar collapseOnSelect expand="lg" className="color-navbar">
       <Navbar.Brand href="/">

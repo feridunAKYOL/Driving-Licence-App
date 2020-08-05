@@ -8,7 +8,7 @@ const CustomNavbar = () => {
   return (
     <Navbar
       style={{
-        backgroundColor: "#212f3c",
+        backgroundColor: "rgba(55, 61, 73, 0.975)",
       }}
       expand="lg"
       fixed="top"

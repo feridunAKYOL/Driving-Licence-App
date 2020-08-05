@@ -13,3 +13,8 @@
 .image-border {
   border-radius: 20px;
 }
+@media only screen and (max-width: 600px) {
+  .image-size {
+    width: 190px;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const OneResultPageNavbar = () => {
+const OneResultPageNavbar = ({ situationNo, testLength }) => {
   return (
     <Navbar className="color-navbar" expand="lg">
       <Navbar.Brand href="/" active>
@@ -29,12 +29,12 @@ const OneResultPageNavbar = () => {
             {situationNo} out of {testLength}
           </h2>
         </Navbar.Brand>
-        <Navbar.Brand href="/freetest">
+        <Navbar.Brand href="/results">
           <Button
             variant="light"
             style={{ backgroundColor: "rgb(5, 94, 110)", color: " #b5e2f7" }}
           >
-            Return The Test
+            Return The Results
           </Button>
         </Navbar.Brand>
       </Navbar.Collapse>

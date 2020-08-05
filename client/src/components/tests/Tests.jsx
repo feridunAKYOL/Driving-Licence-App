@@ -26,8 +26,12 @@ const Tests = () => {
   return (
     <>
       <CustomNavbar />
-      <Jumbotron fluid className="tests-part">
-        <Col xs={6} md={{ span: 4, offset: 4 }} className="middle text-center">
+      <Jumbotron fluid className="tests-part mt-5">
+        <Col
+          xs={{ span: 9, offset: 1 }}
+          md={{ span: 4, offset: 4 }}
+          className="middle text-center"
+        >
           <Row className="extra-part">
             <p className="head-tests">Take More Tests</p>
           </Row>

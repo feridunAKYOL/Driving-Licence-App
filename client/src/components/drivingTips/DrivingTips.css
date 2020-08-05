@@ -4,6 +4,9 @@
   font-family: cursive;
   font-size: 1.2rem;
 }
+.header-tips {
+  margin-top: 70px;
+}
 h1,
 h4 {
   display: flex;

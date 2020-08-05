@@ -1,65 +1,39 @@
 import React, { useEffect, useState } from 'react';
+import {Redirect} from "react-router-dom";
+
 import { Image, Row, Col, Container, Button } from "react-bootstrap";
 import "./OneResultPage.css" ;
-import ResultNavbar from "./ResultNavbar";
+import TestNavbar from "../freeTest/TestNavbar";
 
 const OneResultPage = (props) => {
-  const [situationNumber, setSituationNumber] = useState(props.location.situation.situationNo);
+  const [situationNumber, setSituationNumber] = useState('');
   const [situation, setSituation] = useState([]);
   const [questions, setQuestions] = useState([]);
   //const [userAnswer, setUserAnswer] = useState([]);
   const [testLength, setTestLength] = useState(null);
   const [fileNames, setFileNames] = useState([]);
-
+  const test_name = window.localStorage.getItem('testN');
   //let answer_in_storage = JSON.parse(window.localStorage.getItem('userAnswer'));
-
-  // const getAnswer = (idx, answerNo) => {
-  //   if (typeof Storage !== 'undefined') {
-  //     //Code for localStorage/sessionStorage.
-  //     if (localStorage.userAnswer) {
-  //       let answer_in_storage = JSON.parse(window.localStorage.getItem('userAnswer'));
-  //       setUserAnswer(answer_in_storage);
-  //       let isAnswered_before = userAnswer.filter((el) => el.questionId === idx);
-  //       if (isAnswered_before.length === 0) {
-  //         let usr_answer = userAnswer.slice();
-  //         usr_answer.push({ questionId: idx, answer: answerNo, situationId: situationNumber });
-  //         let aa = usr_answer;
-  //         setUserAnswer(aa);
-  //         window.localStorage.setItem('userAnswer', JSON.stringify(userAnswer));
-  //       } else {
-  //         let usr_answer = userAnswer.slice();
-  //         let changedAnswer = usr_answer.filter((el) => el.questionId !== idx);
-  //         changedAnswer.push({ questionId: idx, answer: answerNo, situationId: situationNumber });
-  //         setUserAnswer(changedAnswer);
-  //         window.localStorage.setItem('userAnswer', JSON.stringify(userAnswer));
-  //       }
-  //       console.log(userAnswer);
-  //     } else {
-  //       localStorage.userAnswer = JSON.stringify([
-  //         { questionId: idx, answer: answerNo, situationId: situationNumber }
-  //       ]);
-  //     }
-  //   } else {
-  //     //Sorry! No Web Storage support..
-  //     alert('Sorry! No Web Storage support..');
-  //   }
-   //};
-
+  window.localStorage.setItem("situation_Id", props.location.situation.situationNo);
+  const const_situationNum = window.localStorage.getItem("situation_Id");
+  
 
   useEffect(
     () => {
+
       const fetchSituation = () => {
-        return fetch(`/api/tests/'equipment'/${props.location.situation.situationNo}`)
+        return fetch(`/api/tests/'${test_name}'/${const_situationNum}`)
           .then((res) => res.json())
           .then((data) => data);
       };
       //console.log(fetchSituation());
       fetchSituation().then((gettingData) => {
         setSituation(gettingData);
+        setSituationNumber(const_situationNum);
       });
 
       const fetchQuestion = () => {
-        return fetch(`/api/tests/question/'equipment'/${props.location.situation.situationNo}`)
+        return fetch(`/api/tests/question/'${test_name}'/${const_situationNum}`)
           .then((res) => res.json())
           .then((data) => data);
       };
@@ -69,13 +43,13 @@ const OneResultPage = (props) => {
       });
       // Total situation count
       const fetchSituationCount = () => {
-        return fetch(`/api/tests/'equipment'`)
+        return fetch(`/api/tests/'${test_name}'`)
           .then((res) => res.json())
           .then((data) => data);
       };
       //console.log(fetchQuestion());
       fetchSituationCount().then((gettingTotal) => {
-        let count = gettingTotal.length;
+        let count = gettingTotal.rows.length;
         setTestLength(count);
       });
 
@@ -95,13 +69,13 @@ const OneResultPage = (props) => {
 
   return (
     <>
-      <ResultNavbar situationNo={situationNumber} testLength={testLength} />
+      <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test" align="center">
         <Row className="test-part">
 
           <Col xs={8} md={8}>
             {fileNames.filter((el) =>
-              Number(el.situationNumber) === Number(situationNumber) && el.testName === 'test-1'
+              Number(el.situationNumber) === Number(situationNumber) && el.testName === test_name
             ).map((img) => (
               <Image
                 src={img.fileRelativePath} //{situation_img.image}

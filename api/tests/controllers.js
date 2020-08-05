@@ -1,5 +1,5 @@
 const db = require('../db-connection');
-const fileNames = require("../fileNames.json");
+const fileNames = require('../fileNames.json');
 
 const controllers = {
 	get: (req, res) => {
@@ -33,13 +33,14 @@ const controllers = {
 			res.status(500).send(`${err.name}: ${err.message}`);
 		}
 	},
-//------------------------------------------------
+	//------------------------------------------------
 
 	//http://localhost:5000/api/tests/'equipment'
 	getTest: (req, res) => {
 		const testName = req.params.testName;
+		let first_situationId = 5000;
 		const sql = `
-					SELECT s.image 
+					SELECT s.image, s.situationId 
 					FROM test t
           			LEFT JOIN situation s
           				on t.testId = s.testId
@@ -51,7 +52,13 @@ const controllers = {
 				res.status(400).json({ error: err.message });
 				return;
 			}
-			res.json(rows);
+			rows.map(
+				(el) =>
+					el.situationId < first_situationId
+						? (first_situationId = el.situationId)
+						: (first_situationId = first_situationId)
+			);
+			res.json({ rows: rows, first: first_situationId -1 });
 		});
 	},
 	//----------------------------------------------------
@@ -156,34 +163,35 @@ const controllers = {
 				res.status(400).json({ error: err.message });
 				return;
 			}
-			
+
 			situations = [];
-			rows.forEach((el) => (
-				situations.includes(el.situationId) ? situations : situations.push(el.situationId)
-			));
+			rows.forEach((el) => (situations.includes(el.situationId) ? situations : situations.push(el.situationId)));
 
 			//find the question number in the test
 			let testLength = situations.length;
 
-			 const result = Array(testLength).fill(null);
+			const result = Array(testLength).fill(null);
 
-			 for (let i = 0; i < testLength; i++) {
-			// 	// find each situation
-			 	let isCorr = true;
-			 	let situation = rows.filter((question) => Number(question.situationId) === situations[i]);
+			for (let i = 0; i < testLength; i++) {
+				// 	// find each situation
+				let isCorr = true;
+				let situation = rows.filter((question) => Number(question.situationId) === situations[i]);
 
-			// 	// find user answer for this situation
-				 let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === situations[i]);
-				 
-			 	if (user_answer.length === situation.length) {
-					 for(let j=0 ; j < situation.length ; j++){
-						 (situation[j].correctOption === user_answer[j].answer) ? isCorr = isCorr && true : isCorr = false;
-					 }
-			 	} else {
-			 		isCorr = false;
-			 	}
-			 	result[i] = {"result" :isCorr , "situationNumber" : situations[i]};
-			 }
+				// 	// find user answer for this situation
+				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === situations[i]);
+
+				if (user_answer.length === situation.length) {
+					for (let j = 0; j < situation.length; j++) {
+						situation[j].correctOption === user_answer[j].answer
+							? (isCorr = isCorr && true)
+							: (isCorr = false);
+					}
+				} else {
+					isCorr = false;
+				}
+				result[i] = { result: isCorr, situationNumber: situations[i] };
+			}
+			
 			res.json(result);
 		});
 	}

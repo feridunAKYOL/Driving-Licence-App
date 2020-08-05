@@ -1,14 +1,14 @@
 import React from "react";
 import "./DrivingTips.css";
 import { Row, Col, Image } from "react-bootstrap";
-import DrivingNavbar from "./DrivingNavbar";
+import CustomNavbar from "../home/CustomNavbar";
 
 const DrivingTips = () => {
   return (
     <div className="first-container">
-      <DrivingNavbar />
+      <CustomNavbar />
       <Row>
-        <h1 className="text-center"> Driving Tips </h1>
+        <h1 className="text-center header-tips"> Driving Tips </h1>
       </Row>
       <Row className="first-part">
         <Col className="text-part order2" xs={10} md={5}>

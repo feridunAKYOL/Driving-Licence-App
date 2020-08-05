@@ -24,8 +24,6 @@ h5 {
 }
 .practice-pic:hover {
   position: relative;
-  top: -5px;
-  left: -5px;
   width: 250px;
   height: auto;
   display: block;

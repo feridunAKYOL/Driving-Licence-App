@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Jumbotron, Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ResultsNavbar from "./ResultsNavbar";
 import "./Results.css";
@@ -41,7 +41,7 @@ const Result = () => {
   return (
     <>
       <ResultsNavbar />
-      <Jumbotron fluid className="result-part">
+      <div className="result-part">
         <Row className="picture-part">
           {fileNames
             .filter((obj) => obj.testName === test)
@@ -85,7 +85,7 @@ const Result = () => {
                           key={id}
                           src={obj.fileRelativePath}
                           width="280px"
-                          className="image-border p-2"
+                          className="image-border image-size p-2"
                         />{" "}
                       </Link>
                     </Row>
@@ -96,7 +96,7 @@ const Result = () => {
                 ))
             )}
         </Row>
-      </Jumbotron>
+      </div>
     </>
   );
 };

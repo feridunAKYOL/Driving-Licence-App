@@ -5,7 +5,7 @@ import "./Picture.css";
 const Picture = () => {
   return (
     <>
-      <Image src="/assets/driversCourse.webp" className="first-image" />
+      <Image src="/assets/driversCourse.webp" className="first-image mt-5" />
       <Row className="driver-card d-none d-md-block">
         {/* <Card className="driver-card d-none d-md-block"> */}
         <h1 className="card-title">Learn on your schedule</h1>

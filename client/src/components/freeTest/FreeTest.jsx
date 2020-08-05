@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image, Row, Col, Container, Button } from "react-bootstrap";
+import { Image, Row, Col, Container } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
 
@@ -130,16 +130,21 @@ const FreeTest = (props) => {
               ))}
           </Col>
         </Row>
-        <Row className="situation mx-5">
+        <Row className="situation">
           {situation.map((text, id) => (
             <h3 key={id}>{text.situation}</h3>
           ))}
         </Row>
         <Row>
-          <Col xs={{ span: 9, offset: 1 }}>
+          <Col xs={5} md={{ span: 9, offset: 1 }}>
             {questions.map((question, id) => (
               <Row className="question-part" key={question.questionId}>
-                <Col xs={8} className="questions" key={question.questionId}>
+                <Col
+                  xs={2}
+                  md={8}
+                  className="questions"
+                  key={question.questionId}
+                >
                   <p key={question.questionId} className="questions-text">
                     {question.text}
                   </p>
@@ -174,8 +179,12 @@ const FreeTest = (props) => {
               </Row>
             ))}
           </Col>
-          <Col xs={{ span: 2, offset: 0 }} className="next ">
-            <Image src="/assets/nextt.png" onClick={() => goToNext()}></Image>
+          <Col xs={1} md={{ span: 2, offset: 0 }}>
+            <Image
+              src="/assets/nextt.png"
+              className="next"
+              onClick={() => goToNext()}
+            ></Image>
           </Col>
         </Row>
       </Container>

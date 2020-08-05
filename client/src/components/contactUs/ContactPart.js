@@ -29,9 +29,9 @@ const ContactPart = () => {
           </Row>
           <Row>
             <p>
-              <a href="#">linkedin.com/webwinners</a>
+              <a href="/">linkedin.com/webwinners</a>
               <br />
-              <a href="#">facebook.com/webwinners</a>
+              <a href="/">facebook.com/webwinners</a>
             </p>
           </Row>
         </Col>
@@ -45,7 +45,7 @@ const ContactPart = () => {
           </Row>
           <Row>
             <p>
-              <a href="#">info@webwinners.be</a>
+              <a href="/">info@webwinners.be</a>
             </p>
           </Row>
         </Col>

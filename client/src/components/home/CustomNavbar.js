@@ -1,14 +1,14 @@
 import React from "react";
-import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./LoginComponent";
-
 
 const CustomNavbar = () => {
   return (
     <Navbar
       style={{
         backgroundColor: "rgba(55, 61, 73, 0.975)",
+        marginBottom: "200px",
       }}
       expand="lg"
       fixed="top"

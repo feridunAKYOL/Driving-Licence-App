@@ -1,6 +1,5 @@
 .free-test {
   height: 100%;
-  min-width: 100%;
   margin: 0 auto;
   font-size: 0.8rem;
   background-color: rgb(252, 254, 255);
@@ -13,7 +12,7 @@ h3 {
   font-size: 2.4vh;
 }
 label {
-  font-size: 1.6vh;
+  font-size: 2vh;
 }
 .test-part {
   max-width: 900px;
@@ -46,9 +45,14 @@ label {
   object-fit: cover;
 }
 .questions {
-  background-color: #f8f9fa;
-  margin-bottom: 0;
-  padding: 0;
+  background-color: #efefef;
+  -webkit-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  -moz-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .questions-text {
   display: flex;
@@ -59,14 +63,20 @@ label {
 }
 .check-box {
   background-color: #dde7f3;
+  -webkit-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  -moz-box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  box-shadow: 0 0 2px 1px rgb(4, 64, 112);
+  padding: 1vw;
 }
 
 .form-check-inline {
   margin-right: 0;
 }
 @media only screen and (min-width: 600px) {
-  .questions,
-  .situation {
+  .free-test {
+    min-width: 100%;
+  }
+  .questions {
     margin-left: 80px;
     margin-right: 0;
   }
@@ -75,15 +85,20 @@ label {
   }
   .next {
     width: 8vw;
-    height: 12vh;
   }
 }
 @media only screen and (max-width: 600px) {
+  .free-test {
+    line-height: 2rem;
+  }
   .image-situation {
     height: 40vh;
-    width: 55vw;
   }
-  .check-box {
-    padding-right: 9px;
+  .next {
+    width: 10vw;
+  }
+  .questions {
+    margin-left: -170px;
+    padding: 0;
   }
 }

@@ -5,7 +5,7 @@ import CustomNavbar from "../home/CustomNavbar";
 
 const DrivingTips = () => {
   return (
-    <div className="first-container">
+    <div className="first-container" onLoad = {window.scroll(0,0)}>
       <CustomNavbar />
       <Row>
         <h1 className="text-center header-tips"> Driving Tips </h1>

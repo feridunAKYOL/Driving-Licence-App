@@ -13,12 +13,12 @@ The parts to be done is listed below. Please choose the issues you want and add 
 | 9 | 5. User Story: Recover/Reset Password - Backend | 2 → |
 | 10 | 6. User Story: User Page - Frontend | 1 → |
 | 11 | 6. User Story: User Page - Backend | 1 → |
-| 12 | 11. User Story: Tests Page - Frontend | 1 → |
-| 13 | 11. User Story: Tests Page - Backend | 1 → |
+| 12 | 11. User Story: Tests Page - Frontend | 1 → | Ayse
+| 13 | 11. User Story: Tests Page - Backend | 1 → | Feridun
 | 14 | 12. User Story: Test Page - Frontend | 1 → Ayse |
 | 15 | 12. User Story: Test Page - Backend | 2 → Mesut, Feridun|
 | 16 | 13. User Story: Results - Frontend | 1 → Omer |
-| 17 | 13. User Story: Results - Backend | 2 →  |
+| 17 | 13. User Story: Results - Backend | 2 →  | Feridun
 | 18 | 14. User Story: Comments Write/send/read (user page) - Frontend | 1 → Rahel |
 | 20 | 14. User Story: Comments Write/send/read (user page) - Backend | 1 → Rahel |
 | 21 | 15. User Story: Tutorials - Frontend | 1 → Ayse |

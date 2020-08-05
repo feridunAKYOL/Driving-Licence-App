@@ -1,11 +1,12 @@
 import React from "react";
 import "./Cards.css";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, Button, Jumbotron } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   return (
-    <>
-      <h2 className="text-center" variant="info">
+    <div id="cards-part">
+      <h2 className="text-center how" style={{ fontSize: "2.2rem" }}>
         How We Work
       </h2>
       <Row className="practice-text">
@@ -15,10 +16,15 @@ const Cards = () => {
             <Card.Body>
               <Card.Title>Online Tutorials</Card.Title>
               <Card.Text>
-                With the online tutorials you learn lots of things. You can
-                imagine you as a driver while watching the videos.
+                With the online tutorials you learn a lot of thing different
+                things. You can imagine you as a driver while watching the
+                videos.
               </Card.Text>
-              <Button variant="success">Videos</Button>
+              <Link to="/tutorials">
+                <Button variant="secondary" className="card-button" size="lg">
+                  Videos
+                </Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -32,7 +38,10 @@ const Cards = () => {
                 practice makes you perfect so you can easily pass the police
                 test at first try.
               </Card.Text>
-              <Button variant="success"> Sign Up</Button>
+              <Button variant="secondary" size="lg">
+                {" "}
+                Sign Up
+              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -43,14 +52,25 @@ const Cards = () => {
               <Card.Title>Driving Test Tips</Card.Title>
               <Card.Text>
                 The pages have been prepared to give you some of the most
-                important rules to remember before your theory test.
+                important rules to remember in your theory test. Read and learn
+                them for your achievement.
               </Card.Text>
-              <Button variant="success">Tips</Button>
+              <Link to="/drivingTips">
+                <Button variant="secondary" size="lg">
+                  Tips
+                </Button>
+              </Link>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-    </>
+      <Jumbotron fluid className="my-5">
+        <h1>Our Coaching:</h1>
+        <h2 className="text-center coaching">
+          Skid-Control + Anti-Stress Driving
+        </h2>
+      </Jumbotron>
+    </div>
   );
 };
 

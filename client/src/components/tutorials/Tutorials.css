@@ -1,0 +1,26 @@
+.main {
+  height: 100%;
+  margin: 0;
+  font-family: "Rowdies", cursive;
+}
+.video-part {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+.header {
+  font-size: 1.8rem;
+}
+.video-section {
+  width: 60vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .video-section {
+    width: 160vw;
+  }
+}
+@media only screen and (min-width: 600px) {
+}

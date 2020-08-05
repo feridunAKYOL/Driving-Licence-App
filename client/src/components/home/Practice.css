@@ -22,3 +22,10 @@ h5 {
 .driver-card {
   font-size: 1vw;
 }
+.practice-pic:hover {
+  position: relative;
+  width: 250px;
+  height: auto;
+  display: block;
+  z-index: 999;
+}

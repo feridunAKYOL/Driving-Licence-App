@@ -17,6 +17,9 @@ import ContactUs from "./components/contactUs/ContactUs";
 import Tests from "./components/tests/Tests"
 
 
+// import Signup component
+import Signup from "./components/SignUp/SignUp";
+
 class App extends Component {
   render() {
     return (
@@ -28,6 +31,7 @@ class App extends Component {
           <Route exact path="/oneResultPage" component={OneResultPage} />
           <Route exact path="/tutorials" component={Tutorials} />
           <Route exact path="/drivingTips" component={DrivingTips} />
+          <Route exact path="/newUser" component={ Signup } />
           <Route exact path="/contactUs" component={ContactUs} />
           <Route exact path="/tests" component={Tests} />
           <Redirect to="/" />

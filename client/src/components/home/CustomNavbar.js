@@ -1,6 +1,8 @@
 import React from "react";
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LoginForm from "./LoginComponent";
+
 
 const CustomNavbar = () => {
   return (
@@ -23,15 +25,7 @@ const CustomNavbar = () => {
           <Nav.Link href="/tests">Take Tests</Nav.Link>
           <Nav.Link href="/contactUs">Contact Us</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl
-            type="text"
-            placeholder="User Name"
-            className="mr-sm-2"
-          />
-          <FormControl type="text" placeholder="Password" className="mr-sm-2" />
-          <Button variant="secondary">Log In</Button>
-        </Form>
+        <LoginForm />
       </Navbar.Collapse>
     </Navbar>
   );

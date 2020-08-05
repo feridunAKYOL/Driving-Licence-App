@@ -1,7 +1,8 @@
 import React from "react";
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import SignUp from "../SignUp/SignUp";
+import LoginForm from "./LoginComponent";
+
 
 const CustomNavbar = () => {
   return (
@@ -17,16 +18,7 @@ const CustomNavbar = () => {
           <Nav.Link href="/freetest">Take Practice Test</Nav.Link>
           <Nav.Link href="#contact">Contact Us</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl
-            type="text"
-            placeholder="User Name"
-            className="mr-sm-2"
-          />
-          <FormControl type="text" placeholder="Password" className="mr-sm-2" />
-          <Button variant="success">Log In</Button>
-          <SignUp />
-        </Form>
+        <LoginForm />
       </Navbar.Collapse>
     </Navbar>
   );

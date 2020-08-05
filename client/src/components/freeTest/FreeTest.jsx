@@ -130,7 +130,7 @@ const FreeTest = (props) => {
               ))}
           </Col>
         </Row>
-        <Row className="situation">
+        <Row className="situation mx-5">
           {situation.map((text, id) => (
             <h3 key={id}>{text.situation}</h3>
           ))}

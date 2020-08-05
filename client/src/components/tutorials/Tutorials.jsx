@@ -1,7 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import "./Tutorials.css";
-import { Col, Row, Jumbotron } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import CustomNavbar from "../home/CustomNavbar";
 import Footer from "../home/Footer";
 

@@ -32,17 +32,11 @@ label {
   align-items: center;
 }
 .question-part {
-  width: 1100px;
-  margin-left: 180px;
+  line-height: 1rem;
 }
+
 .image-situation {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
   height: 60vh;
-  width: 60vw;
-  object-fit: cover;
 }
 .questions {
   background-color: #efefef;
@@ -52,14 +46,14 @@ label {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 .questions-text {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  align-items: flex-start;
-  font-size: 2.2vh;
+  align-items: center;
+  font-size: 1.3em;
 }
 .check-box {
   background-color: #dde7f3;
@@ -77,28 +71,32 @@ label {
     min-width: 100%;
   }
   .questions {
-    margin-left: 80px;
     margin-right: 0;
   }
   .check-box {
     margin-left: 0;
   }
+  .next-image {
+    width: 90px;
+  }
   .next {
-    width: 8vw;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media only screen and (max-width: 600px) {
   .free-test {
-    line-height: 2rem;
+    line-height: 1.5rem;
   }
   .image-situation {
     height: 40vh;
   }
-  .next {
-    width: 10vw;
+  .next-image {
+    width: 50px;
   }
   .questions {
-    margin-left: -170px;
     padding: 0;
   }
 }

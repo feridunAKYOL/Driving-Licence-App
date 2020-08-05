@@ -111,7 +111,7 @@ const FreeTest = (props) => {
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test" align="center">
         <Row className="test-part">
-          <Col xs={8} md={9}>
+          <Col xs={12} >
             {fileNames
               .filter(
                 (el) =>
@@ -119,72 +119,72 @@ const FreeTest = (props) => {
                   el.testName === test
               )
               .map((img) => (
-                <Row className="test-part">
+                <div className="test-part ">
                   <Image
                     src={img.fileRelativePath} //{situation_img.image}
                     rounded
                     className="image-situation  mb-2"
                     key={img.situationNumber}
                   />
-                </Row>
+                </div>
               ))}
           </Col>
         </Row>
         <Row className="situation">
           {situation.map((text, id) => (
-            <h3 key={id}>{text.situation}</h3>
+            <Col xs={12}>
+              <h3 key={id}>{text.situation}</h3>
+            </Col>
           ))}
         </Row>
         <Row>
-          <Col xs={5} md={{ span: 9, offset: 1 }}>
+          <Col xs={{ span: 9, offset: 1 }} md={{ span: 7, offset: 3}}>
             {questions.map((question, id) => (
-              <Row className="question-part" key={question.questionId}>
-                <Col
-                  xs={2}
-                  md={8}
-                  className="questions"
-                  key={question.questionId}
-                >
-                  <p key={question.questionId} className="questions-text">
-                    {question.text}
-                  </p>
-                </Col>
+                <Row className="question-part" key={question.questionId}>
+                  <Col
+                    xs={8}
+                    className="questions"
+                    key={question.questionId}
+                  >
+                    <p key={question.questionId} className="questions-text">
+                      {question.text}
+                    </p>
+                  </Col>
 
-                <Col xs={1} className="form-check form-check-inline check-box">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name={id}
-                    id={`inlineRadio${question.questionId}`}
-                    value="option1"
-                    onChange={() => getAnswer(question.questionId, 1)}
-                  />
-                  <label className="form-check-label" htmlFor="inlineRadio1">
-                    Yes
-                  </label>
-                </Col>
-                <Col xs={1} className="form-check form-check-inline check-box">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name={id}
-                    id={`inlineRadio${question.questionId + 1}`}
-                    value="option2"
-                    onChange={() => getAnswer(question.questionId, 2)}
-                  />
-                  <label className="form-check-label" htmlFor="inlineRadio2">
-                    No
-                  </label>
-                </Col>
-              </Row>
+                <Col xs={2} md={1} className="form-check form-check-inline check-box">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name={id}
+                      id={`inlineRadio${question.questionId}`}
+                      value="option1"
+                      onChange={() => getAnswer(question.questionId, 1)}
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio1">
+                      Yes
+                    </label>
+                  </Col>
+                  <Col xs={2} md = {1} className="form-check form-check-inline check-box">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name={id}
+                      id={`inlineRadio${question.questionId + 1}`}
+                      value="option2"
+                      onChange={() => getAnswer(question.questionId, 2)}
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio2">
+                      No
+                    </label>
+                  </Col>
+                </Row>
             ))}
           </Col>
-          <Col xs={1} md={{ span: 2, offset: 0 }}>
+          <Col xs={2} md={2} className="next" onClick={() => goToNext()}>
             <Image
               src="/assets/nextt.png"
-              className="next"
-              onClick={() => goToNext()}
-            ></Image>
+              className="next-image"
+              ></Image>
           </Col>
         </Row>
       </Container>

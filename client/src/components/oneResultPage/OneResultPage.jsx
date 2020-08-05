@@ -79,38 +79,38 @@ const OneResultPage = (props) => {
                   el.testName === test_name
               )
               .map((img) => (
-                <Row className="test-part">
+                <div className="test-part">
                   <Image
                     src={img.fileRelativePath} //{situation_img.image}
                     rounded
                     className="image-situation  mb-2"
                     key={img.situationNumber}
                   />
-                </Row>
+                </div>
               ))}
           </Col>
         </Row>
         <Row className="situation ">
-          {situation.map((text, id) => (
-            <h3 key={id}>{text.situation}</h3>
-          ))}
+          <Col>
+            {situation.map((text, id) => (
+              <h3 key={id}>{text.situation}</h3>
+            ))}
+          </Col>
         </Row>
-        <Row>
-          <Col xs={5} md={{ span: 9, offset: 1 }}>
             {questions.map((question, id) => (
               <Row className="question-part" key={question.questionId} xs={7}>
-                <Col
-                  xs={5}
-                  md={8}
+                <Col 
+                  xs={{ span: 10, offset: 1 }}
+                  md={{ span: 6, offset: 3 }}
                   className="questions"
                   key={question.questionId}
                 >
                   <div>
                     <div>
-                      <h4 key={question.questionId}>{question.text}</h4>
+                      <p key={question.questionId} className="ml-1 questions-text" >{question.text}</p>
                     </div>
                     <div className="feedbackQuestion">
-                      <p>
+                      <p className="ml-1 ">
                         {" "}
                         {question.explanation === null
                           ? `${question.answer}`
@@ -121,8 +121,6 @@ const OneResultPage = (props) => {
                 </Col>
               </Row>
             ))}
-          </Col>
-        </Row>
       </Container>
     </>
   );

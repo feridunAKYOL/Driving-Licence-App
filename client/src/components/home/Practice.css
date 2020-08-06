@@ -2,21 +2,13 @@
   height: 100%;
   margin: 0;
   font-family: "Rowdies", cursive;
-  background-color: rgb(228, 233, 236);
+  background-color: #AED6F1   ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.practice-pic {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: flex-end;
-}
-.practice-text-first,
-.practice-text-second {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: flex-end;
+.practice-text {
   color: rgb(51, 86, 95);
   font-weight: 700;
   margin: 20px;
@@ -24,7 +16,7 @@
 .practice-pic:hover {
   box-shadow: 20px 20px 20px rgb(78, 132, 146);
   position: relative;
-  width: 250px;
+  width: 35%;
   height: auto;
   display: block;
   z-index: 999;

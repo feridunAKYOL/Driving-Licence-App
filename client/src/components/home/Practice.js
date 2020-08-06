@@ -10,32 +10,24 @@ class Practice extends React.Component {
   }
   render() {
     return (
-      <Container fluid id ="practice-part" className="third-part mt-5">
-        <Row>
-          <Row>
-            <Col className="practice-text-first">
+      <Container fluid id="practice-part" className=" third-part mb-5">
+        <Row className="justify-content-md-center" >
+            <Col xs={12} className="practice-text-first">
               <h1>Take Free Test</h1>
             </Col>
-          </Row>
-
-          <Row>
-            <Col className="practice-text-second">
-              <h5>AN EASY WAY TO STUDY BORING STUFF</h5>
+            <Col xs={12} className = "text-center" >
+              <div>AN EASY WAY TO STUDY BORING STUFF</div>
             </Col>
-          </Row>
-
-          <Row>
-            <Col>
-              <Link to="/freetest">
-                <Image
-                  src="/assets/free-online.jpeg"
-                  roundedCircle
-                  className="practice-pic"
-                  width="70%"
-                />
-              </Link>
-            </Col>
-          </Row>
+            <Col xs={{span:6 , offset:4}} >
+                <Link to="/freetest">
+                  <Image
+                    src="/assets/free-online.jpeg"
+                    roundedCircle
+                    className="practice-pic"
+                    width="30%"
+                  />
+                </Link>
+              </Col>
           {/* Our page video will be put.
             <Col className=" m-5" xs={12} md={5}>
               <VideoWatch />

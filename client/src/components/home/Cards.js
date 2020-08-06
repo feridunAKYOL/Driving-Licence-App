@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cards.css';
-import { Row, Col, Card, Button, CardDeck, Container } from 'react-bootstrap';
+import { Row, Col, Card, Button, CardDeck, Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Cards = () => {
@@ -65,12 +65,15 @@ const Cards = () => {
 			</CardDeck>
 
 			<Row>
-				<Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 5 }} className="mt-5 mb-2">
-					<a href="#practice-part">
-						<Button size="lg" variant="success">
-							Get in Touch With Us
-						</Button>
-					</a>
+				<Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 4 }} className="mt-5 mb-2">
+          <a href="#practice-part">
+            <Image
+              src="/assets/bottom.png"
+              className="go d-none d-xl-block"
+              roundedCircle
+            />
+          </a>
+
 				</Col>
 			</Row>
 

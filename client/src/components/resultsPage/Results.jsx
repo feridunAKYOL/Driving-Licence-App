@@ -84,7 +84,7 @@ const Result = () => {
                         <Image
                           key={id}
                           src={obj.fileRelativePath}
-                          width="280px"
+                          width="100%"
                           className="image-border image-size p-2"
                         />{" "}
                       </Link>

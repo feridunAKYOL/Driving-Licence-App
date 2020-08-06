@@ -10,7 +10,7 @@ class Practice extends React.Component {
   }
   render() {
     return (
-      <Container fluid className="third-part mt-5">
+      <Container fluid id ="practice-part" className="third-part mt-5">
         <Row>
           <Col xs={12} md={5}>
             <Row>

@@ -51,12 +51,13 @@ class CommentApp extends Component {
 		return (
 			<Container
 				fluid
-				className="App  shadow"
+				id ="comment-part"
+				className="App  shadow mt-5"
 					maxHeight = '80%'
 					overflow = 'scroll'
 			>
 				<Row>
-          <Col xs={{span:4, offset:4}} >
+          <Col xs={{span:4, offset:2}} >
 						<h2>Comments</h2>
 					</Col>
           <Col xs={{ span: 8, offset: 2 }} className="pt-3 ">

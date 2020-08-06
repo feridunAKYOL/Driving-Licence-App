@@ -65,7 +65,7 @@ const Cards = () => {
 			</CardDeck>
 
 			<Row>
-				<Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 5 }} className="mt-5">
+				<Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 5 }} className="mt-5 mb-2">
 					<a href="#practice-part">
 						<Button size="lg" variant="success">
 							Get in Touch With Us

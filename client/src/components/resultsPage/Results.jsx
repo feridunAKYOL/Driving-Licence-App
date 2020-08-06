@@ -60,9 +60,10 @@ const Result = () => {
                   <Col
                     key={id}
                     xs={5}
-                    md={3}
-                    lg={2}
-                    className="image-border m-4 p-1"
+                    md={4}
+                    lg={3}
+                    xl={2}
+                    className="image-border m-1"
                     style={
                       a.result
                         ? { border: "groove 3px green" }
@@ -84,7 +85,7 @@ const Result = () => {
                         <Image
                           key={id}
                           src={obj.fileRelativePath}
-                          width="280px"
+                          width="100%"
                           className="image-border image-size p-2"
                         />{" "}
                       </Link>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./LoginComponent";
 
@@ -16,7 +16,7 @@ const CustomNavbar = () => {
       className="mb-5"
     >
       <Navbar.Brand href="/" active>
-        WebWinners
+        <Image src="/assets/logo.png" height="50vh" width="50vw" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

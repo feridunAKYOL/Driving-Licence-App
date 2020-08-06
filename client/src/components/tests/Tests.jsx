@@ -29,6 +29,7 @@ const Tests = () => {
       <Jumbotron fluid className="tests-part mt-5">
         <Col
           xs={{ span: 9, offset: 1 }}
+          sm={{ span: 7, offset: 2 }}
           md={{ span: 4, offset: 4 }}
           className="middle text-center"
         >
@@ -44,9 +45,12 @@ const Tests = () => {
         </Col>
         <Row className="image-part p-4">
           {fileNames.map((obj, id) => (
-            <Col key={id} xs={5} md={3} lg={2} className="m-4 p-1">
+            <Col key={id} xs={8} md={5} lg={3} xl={3} className="m-2 p-1">
               <Row className="justify-content-center">
-                <p className="file-name"> {obj.filename} Test</p>
+                <p className="file-name">
+                  {" "}
+                  {obj.filename} <br /> Test
+                </p>
               </Row>
               <Row className="justify-content-center">
                 <Link
@@ -61,7 +65,7 @@ const Tests = () => {
                   <Image
                     key={id}
                     src={obj.filePath}
-                    width="300px"
+                    width="100%"
                     className=""
                     rounded
                   />{" "}

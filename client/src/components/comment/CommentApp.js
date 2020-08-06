@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Row, Col, Image } from "react-bootstrap";
 
 import CommentList from "./ListComment";
 import CommentForm from "./formComment";
@@ -48,10 +49,19 @@ class CommentApp extends Component {
   }
   render() {
     return (
-      <div className="App container bg-light shadow">
-        <header className="App-header">
-          <h2 className="App-title">Comments</h2>
-        </header>
+      <div
+        className="App container bg-light shadow"
+        style={{
+          width: "100%",
+          maxHeight: "80%",
+          overflow: "scroll",
+        }}
+      >
+        <Row>
+          <Col xs={10}>
+            <h2 className="practice-text">Comments</h2>
+          </Col>
+        </Row>
 
         <div className="row">
           <div className="col-11  pt-3 ">

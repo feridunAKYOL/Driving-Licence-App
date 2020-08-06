@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .first-image {
   min-width: 100vw;
 }

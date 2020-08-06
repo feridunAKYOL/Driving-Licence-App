@@ -52,9 +52,8 @@ const Result = () => {
               results
                 .filter(
                   (el) =>
-                    Number(el.situationNumber) -
-                      window.localStorage.getItem("firstSituationId") ===
-                    Number(obj.situationNumber)
+                    Number(el.sequence) === Number(obj.situationNumber) 
+                    // + window.localStorage.getItem("firstSituationId")
                 )
                 .map((a) => (
                   <Col

@@ -150,8 +150,8 @@ const FreeTest = (props) => {
 
                 <Col
                   xs={2}
-                  md={1}
-                  className="form-check form-check-inline check-box"
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
                 >
                   <input
                     className="form-check-input"
@@ -167,8 +167,8 @@ const FreeTest = (props) => {
                 </Col>
                 <Col
                   xs={2}
-                  md={1}
-                  className="form-check form-check-inline check-box"
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
                 >
                   <input
                     className="form-check-input"

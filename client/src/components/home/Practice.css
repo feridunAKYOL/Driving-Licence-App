@@ -3,7 +3,7 @@
   margin: 0;
   font-family: "Rowdies", cursive;
 
-  background-color: #3498DB  ;
+  background-color: #3498db;
 
   display: flex;
   flex: 1;
@@ -24,9 +24,8 @@
   z-index: 999;
 }
 .comment-Button {
-
   height: 15%;
-  background-color: #3498DB   ;
+  background-color: #3498db;
 
   display: flex;
   flex: 1;
@@ -42,4 +41,7 @@
 .third-go:hover {
   box-shadow: inset 0 0 0 2px #b4ecff;
   color: #e9f1f3 !important;
+}
+.comment-head {
+  color: #138496;
 }

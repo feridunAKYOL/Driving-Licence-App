@@ -21,7 +21,7 @@ const FreeTest = (props) => {
           window.localStorage.getItem("userAnswer")
         );
         setUserAnswer(answer_in_storage);
-        let isAnswered_before = userAnswer.filter(
+        let isAnswered_before = answer_in_storage.filter(
           (el) => el.questionId === idx
         );
         if (isAnswered_before.length === 0) {
@@ -33,9 +33,9 @@ const FreeTest = (props) => {
           });
           let aa = usr_answer;
           setUserAnswer(aa);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(usr_answer));
         } else {
-          let usr_answer = userAnswer.slice();
+          let usr_answer = isAnswered_before.slice();
           let changedAnswer = usr_answer.filter((el) => el.questionId !== idx);
           changedAnswer.push({
             questionId: idx,
@@ -43,7 +43,7 @@ const FreeTest = (props) => {
             situationId: situationNumber,
           });
           setUserAnswer(changedAnswer);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(changedAnswer));
         }
         console.log(userAnswer);
       } else {

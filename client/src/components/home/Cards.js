@@ -1,26 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Cards.css";
-import {
-  Row,
-  Col,
-  Card,
-  Button,
-  CardDeck,
-  Container,
-  Image,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Row, Col, Card, Button, CardDeck, Container, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Cards = () => {
-  return (
-    <Container id="cards-part" className="cards-part">
-      <Row>
-        <Col>
-          <h2 className="text-center how" style={{ fontSize: "2.2rem" }}>
-            How We Work
-          </h2>
-        </Col>
-      </Row>
+class Cards extends Component {
+  constructor() {
+    super();
+    const token = localStorage.getItem("token");
+    const username = localStorage.getItem("username");
+
+    let loggedIn = true;
+    let buttonName = "Take Test";
+    let path = "/tests";
+    if (token == null) {
+      loggedIn = false;
+      buttonName = "Sign-Up";
+      path = "/signup";
+    }
+    this.state = {
+      buttonName,
+      path,
+      loggedIn,
+    };
+  }
+
+  render() {
+    return (
+      <Container id="cards-part" className="cards-part">
+        <Row>
+          <Col>
+            <h2 className="text-center how" style={{ fontSize: '2.2rem' }}>
+              How We Work
+            </h2>
+          </Col>
+        </Row>
 
       <CardDeck>
         <Card className="text-center">
@@ -92,6 +105,7 @@ const Cards = () => {
       </Row>
     </Container>
   );
+    }
 };
 
 export default Cards;

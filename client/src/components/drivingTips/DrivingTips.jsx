@@ -2,6 +2,7 @@ import React from "react";
 import "./DrivingTips.css";
 import { Row, Col, Image, Container } from "react-bootstrap";
 import CustomNavbar from "../home/CustomNavbar";
+import Footer from "../home/Footer";
 
 const DrivingTips = () => {
   return (
@@ -158,6 +159,7 @@ const DrivingTips = () => {
             </Row>
           </Col>
         </Row>
+        <Footer />
       </Container>
     </>
   );

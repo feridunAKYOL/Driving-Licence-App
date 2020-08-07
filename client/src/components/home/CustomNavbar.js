@@ -81,7 +81,7 @@ class CustomNavbar extends Component {
               <Nav.Link href="/tests">Take Tests</Nav.Link>
               <Nav.Link href="/contactUs">Contact Us</Nav.Link>
             </Nav>
-            <h2>
+            <h2 style={{color:"white"}}>
               <Badge color="primary" style={{ textTransform: "capitalize" }}>
                 {" "}
                 WelCome..{account.username} 🇷
@@ -125,7 +125,7 @@ class CustomNavbar extends Component {
                 className="mr-sm-2"
                 onChange={this.onChange} required />
               <FormControl type="password" name="password" value={this.password} placeholder="Password" className="mr-sm-2" onChange={this.onChange} required />
-              <Button variant="success" onClick={this.login}>Log In</Button>
+              <Button variant="secondary" onClick={this.login}>Log In</Button>
             </Form>
             <Signup />
           </Navbar.Collapse>

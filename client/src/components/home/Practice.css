@@ -2,7 +2,9 @@
   height: 80%;
   margin: 0;
   font-family: "Rowdies", cursive;
-  background-color: #aed6f1;
+
+  background-color: #3498DB  ;
+
   display: flex;
   flex: 1;
   justify-content: center;
@@ -22,8 +24,10 @@
   z-index: 999;
 }
 .comment-Button {
-  height: 20%;
-  background-color: #aed6f1;
+
+  height: 15%;
+  background-color: #3498DB   ;
+
   display: flex;
   flex: 1;
   justify-content: center;

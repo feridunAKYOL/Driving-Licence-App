@@ -128,7 +128,7 @@ function FormFields({
           type="text"
           className="form-control"
           id="mobile"
-          placeholder="Enter your country"
+          placeholder="Enter your mobile number"
           name="mobile"
           required
           value={mobile.value}

@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Landing from "./Landing";
-
 import FreeTest from "./components/freeTest/FreeTest";
 import Result from "./components/resultsPage/Results";
 import OneResultPage from "./components/oneResultPage/OneResultPage";

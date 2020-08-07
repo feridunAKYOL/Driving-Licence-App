@@ -61,22 +61,23 @@ class Cards extends Component {
             </Card.Link>
           </Card>
 
-          <Card className="text-center ">
-            <Card.Img variant="top" src="/assets/practice.jpg" />
-            <Card.Body>
-              <Card.Title className="head-card">Buy Access</Card.Title>
-              <Card.Text>
-                When you registered to our page you can find more tests. More
-                practice makes you perfect so you can easily pass the police
-                test at first try.{" "}
-              </Card.Text>
-            </Card.Body>
-            <Card.Link className="mb-2" href="/signup">
-              <Button variant="secondary" size="lg" className="card-button ">
-                Sign Up
-              </Button>
-            </Card.Link>
-          </Card>
+
+        <Card className="text-center ">
+          <Card.Img variant="top" src="/assets/practice.jpg" />
+          <Card.Body>
+            <Card.Title className="head-card">Buy Access</Card.Title>
+            <Card.Text>
+              When you registered to our page you can find more tests. More
+              practice makes you perfect so you can easily pass the police test
+              at first try.{" "}
+            </Card.Text>
+          </Card.Body>
+          <Card.Link className="mb-2" href="/signup">
+            <Button variant="secondary" size="lg" className="card-button ">
+              {this.state.buttonName}
+            </Button>
+          </Card.Link>
+        </Card>
 
           <Card className="text-center">
             <Card.Img variant="top" src="/assets/drivingTestTips.jpg" />

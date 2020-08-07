@@ -27,13 +27,13 @@ class Cards extends Component {
   render() {
     return (
       <Container id="cards-part" className="cards-part">
-			<Row>
-				<Col>
-					<h2 className="text-center how" style={{ fontSize: '2.2rem' }}>
-						How We Work
-					</h2>
-				</Col>
-			</Row>
+        <Row>
+          <Col>
+            <h2 className="text-center how" style={{ fontSize: '2.2rem' }}>
+              How We Work
+            </h2>
+          </Col>
+        </Row>
 
       <CardDeck>
         <Card className="text-center">
@@ -105,6 +105,7 @@ class Cards extends Component {
       </Row>
     </Container>
   );
+    }
 };
 
 export default Cards;

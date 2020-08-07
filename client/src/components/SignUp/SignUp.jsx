@@ -16,7 +16,6 @@ const SignUp = () => {
         const firstName = useInput(""); // varchar
         const lastName = useInput(""); // varchar
         const userName = useInput(""); // varchar
-        const country = useInput(""); // varchar
         const email = useInput(""); // varchar
         const password = useInput(""); // varchar
         const country = useInput(""); // varchar

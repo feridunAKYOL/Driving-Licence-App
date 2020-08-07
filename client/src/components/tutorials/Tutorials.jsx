@@ -7,9 +7,9 @@ import Footer from "../home/Footer";
 
 const Tutorials = () => {
   return (
-    <div className="main">
+    <>
       <CustomNavbar />
-      <Container fluid>
+      <Container fluid className="main">
         <Row className="video-part">
           <Col xs={10} sm={7} lg={6} xl={3}>
             <p className="header">Driving At Night</p>
@@ -70,7 +70,7 @@ const Tutorials = () => {
         </Row>
         <Footer />
       </Container>
-    </div>
+    </>
   );
 };
 

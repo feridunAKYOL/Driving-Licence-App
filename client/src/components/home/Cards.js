@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Cards.css';
 import { Row, Col, Card, Button, CardDeck, Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Cards = () => {
+class Cards extends Component {
+
+  constructor() {
+    super();
+    const token = localStorage.getItem("token")
+    const username = localStorage.getItem("username")
+
+    let loggedIn = true
+    let buttonName = 'Take Test'
+    let path = '/tests'
+    if (token == null) {
+      loggedIn = false
+      buttonName = 'Sign-Up'
+      path = '/signup'
+
+    }
+    this.state = {
+      buttonName,
+      path,
+      loggedIn
+    }
+  }
+
+  render() {
 	return (
 		<Container id="cards-part" className="cards-part">
 			<Row>
@@ -38,7 +61,12 @@ const Cards = () => {
 						<Card.Text>
 							When you registered to our page you can find more tests. More practice makes you perfect so
 							you can easily pass the police test at first try.{' '}
-						</Card.Text>
+            </Card.Text>
+            <Link to={this.state.path}>
+              <Button variant="secondary" size="lg">
+                {this.state.buttonName}
+              </Button>
+            </Link>
 					</Card.Body>
             <Card.Link className="mb-2" href="/drivingTips">
 							<Button variant="secondary" size="lg" className="card-button ">

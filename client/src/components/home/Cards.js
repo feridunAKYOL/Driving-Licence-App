@@ -65,7 +65,7 @@ class Cards extends Component {
           </Card.Body>
           <Card.Link className="mb-2" href="/signup">
             <Button variant="secondary" size="lg" className="card-button ">
-              Sign Up
+              {this.state.buttonName}
             </Button>
           </Card.Link>
         </Card>

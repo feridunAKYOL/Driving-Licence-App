@@ -16,6 +16,21 @@ function FormFields({
   return (
     <div>
       <div className="form-group mt-4">
+        <h6>First name:</h6>
+        <input
+          type="text"
+          className="form-control"
+          id="first_name"
+          placeholder="Enter last name"
+          name="firstName"
+          required
+          value={firstName.value}
+          onChange={firstName.onChange}
+        />
+        <div className="valid-feedback"></div>
+        <div className="invalid-feedback">* Must be filled.</div>
+      </div>
+      <div className="form-group mt-4">
         <h6>Last name:</h6>
         <input
           type="text"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Image, Row, Col, Container } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
+import Footer from "../home/Footer";
 
 const FreeTest = (props) => {
   const [situationNumber, setSituationNumber] = useState(1);
@@ -20,7 +21,7 @@ const FreeTest = (props) => {
           window.localStorage.getItem("userAnswer")
         );
         setUserAnswer(answer_in_storage);
-        let isAnswered_before = userAnswer.filter(
+        let isAnswered_before = answer_in_storage.filter(
           (el) => el.questionId === idx
         );
         if (isAnswered_before.length === 0) {
@@ -32,9 +33,9 @@ const FreeTest = (props) => {
           });
           let aa = usr_answer;
           setUserAnswer(aa);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(usr_answer));
         } else {
-          let usr_answer = userAnswer.slice();
+          let usr_answer = isAnswered_before.slice();
           let changedAnswer = usr_answer.filter((el) => el.questionId !== idx);
           changedAnswer.push({
             questionId: idx,
@@ -42,7 +43,7 @@ const FreeTest = (props) => {
             situationId: situationNumber,
           });
           setUserAnswer(changedAnswer);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(changedAnswer));
         }
         console.log(userAnswer);
       } else {
@@ -111,7 +112,7 @@ const FreeTest = (props) => {
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test" align="center">
         <Row className="test-part">
-          <Col xs={12} >
+          <Col xs={12}>
             {fileNames
               .filter(
                 (el) =>
@@ -138,56 +139,58 @@ const FreeTest = (props) => {
           ))}
         </Row>
         <Row>
-          <Col xs={{ span: 9, offset: 1 }} md={{ span: 7, offset: 3}}>
+          <Col xs={{ span: 9, offset: 1 }} md={{ span: 7, offset: 3 }}>
             {questions.map((question, id) => (
-                <Row className="question-part" key={question.questionId}>
-                  <Col
-                    xs={8}
-                    className="questions"
-                    key={question.questionId}
-                  >
-                    <p key={question.questionId} className="questions-text">
-                      {question.text}
-                    </p>
-                  </Col>
+              <Row className="question-part" key={question.questionId}>
+                <Col xs={8} className="questions" key={question.questionId}>
+                  <p key={question.questionId} className="questions-text">
+                    {question.text}
+                  </p>
+                </Col>
 
-                <Col xs={2} md={1} className="form-check form-check-inline check-box">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name={id}
-                      id={`inlineRadio${question.questionId}`}
-                      value="option1"
-                      onChange={() => getAnswer(question.questionId, 1)}
-                    />
-                    <label className="form-check-label" htmlFor="inlineRadio1">
-                      Yes
-                    </label>
-                  </Col>
-                  <Col xs={2} md = {1} className="form-check form-check-inline check-box">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name={id}
-                      id={`inlineRadio${question.questionId + 1}`}
-                      value="option2"
-                      onChange={() => getAnswer(question.questionId, 2)}
-                    />
-                    <label className="form-check-label" htmlFor="inlineRadio2">
-                      No
-                    </label>
-                  </Col>
-                </Row>
+                <Col
+                  xs={2}
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
+                >
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={id}
+                    id={`inlineRadio${question.questionId}`}
+                    value="option1"
+                    onChange={() => getAnswer(question.questionId, 1)}
+                  />
+                  <label className="form-check-label" htmlFor="inlineRadio1">
+                    Yes
+                  </label>
+                </Col>
+                <Col
+                  xs={2}
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
+                >
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name={id}
+                    id={`inlineRadio${question.questionId + 1}`}
+                    value="option2"
+                    onChange={() => getAnswer(question.questionId, 2)}
+                  />
+                  <label className="form-check-label" htmlFor="inlineRadio2">
+                    No
+                  </label>
+                </Col>
+              </Row>
             ))}
           </Col>
           <Col xs={2} md={2} className="next" onClick={() => goToNext()}>
-            <Image
-              src="/assets/nextt.png"
-              className="next-image"
-              ></Image>
+            <Image src="/assets/nextt.png" className="next-image"></Image>
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };

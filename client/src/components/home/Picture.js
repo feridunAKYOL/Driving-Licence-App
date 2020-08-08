@@ -1,13 +1,14 @@
 import React from "react";
-import { Row, Image } from "react-bootstrap";
+import { Col, Row, Image } from "react-bootstrap";
 import "./Picture.css";
 
 const Picture = () => {
   return (
-    <>
-      <Image src="/assets/driversCourse.webp" className="first-image mt-5" />
+    <Row>
+      <Col xs={5} md={12}>
+        <Image src="/assets/driversCourse.webp" className="first-image mt-5" />
+      </Col>
       <Row className="driver-card d-none d-md-block">
-        {/* <Card className="driver-card d-none d-md-block"> */}
         <h1 className="card-title">Learn on your schedule</h1>
 
         <h3 className="h-text">
@@ -16,9 +17,13 @@ const Picture = () => {
         </h3>
       </Row>
       <a href="#cards-part">
-        <Image src="/assets/bottom.png" className="go" roundedCircle />
+        <Image
+          src="/assets/bottom.png"
+          className="go d-none d-xl-block"
+          roundedCircle
+        />
       </a>
-    </>
+    </Row>
   );
 };
 

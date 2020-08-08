@@ -1,5 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
 .first-image {
-  min-width: 100vw;
+  width: 100vw;
 }
 .driver-card {
   position: absolute;
@@ -11,10 +14,11 @@
 }
 .card-title {
   color: white;
-  font-size: 5rem;
+  font-size: 54px;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+  font-family: "Rowdies", cursive;
 }
 .h-text {
   color: white;
@@ -30,17 +34,7 @@
 .go {
   width: 100px;
   position: absolute;
-  bottom: 20px;
-  left: 800px;
-  padding: 0;
+  top: 90%;
+  left: 45%;
   cursor: pointer;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-@media only screen and (max-width: 600px) {
-  .first-image {
-    width: 500px;
-  }
 }

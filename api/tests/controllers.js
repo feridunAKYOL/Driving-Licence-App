@@ -150,7 +150,7 @@ const controllers = {
 		debugger;
 		const testName = req.params.testName;
 		const userAnswers = req.body.userAnswer;
-		const sql = `SELECT q.correctOption, q.questionId as questionId , s.situationId FROM question q
+		const sql = `SELECT q.correctOption, q.questionId as questionId , s.situationId , s.sequence as sequence FROM question q
                 LEFT JOIN situation s
                 on s.situationId = q.situationId
                 LEFT JOIN test t
@@ -165,7 +165,11 @@ const controllers = {
 			}
 
 			situations = [];
-			rows.forEach((el) => (situations.includes(el.situationId) ? situations : situations.push(el.situationId)));
+			sequences = [];
+			rows.forEach((el) => (situations.includes(el.situationId) ? situations : situations.push(el.situationId )));
+			rows.forEach((el) => (sequences.includes(el.sequence) ? sequences : sequences.push(el.sequence )));
+			let first_situationNo = 500000;
+			situations.map((el) => el < first_situationNo ? first_situationNo = el : first_situationNo = first_situationNo ) 
 
 			//find the question number in the test
 			let testLength = situations.length;
@@ -178,7 +182,7 @@ const controllers = {
 				let situation = rows.filter((question) => Number(question.situationId) === situations[i]);
 
 				// 	// find user answer for this situation
-				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === situations[i]);
+				let user_answer = userAnswers.filter((answer) => Number(answer.situationId) === (situations[i] - first_situationNo + 1));
 
 				if (user_answer.length === situation.length) {
 					for (let j = 0; j < situation.length; j++) {
@@ -189,7 +193,7 @@ const controllers = {
 				} else {
 					isCorr = false;
 				}
-				result[i] = { result: isCorr, situationNumber: situations[i] };
+				result[i] = { result: isCorr, situationNumber: situations[i], sequence: sequences[i] };
 			}
 			
 			res.json(result);

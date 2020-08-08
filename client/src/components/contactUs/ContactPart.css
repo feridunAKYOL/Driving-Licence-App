@@ -1,21 +1,20 @@
-h2,
-i {
-  color: rgb(20, 137, 167);
+.contact-part {
+  margin-bottom: 35px;
 }
-i {
-  margin-right: 10px;
-  margin-top: 3px;
+.contacts,
+.contacts-i {
+  color: rgb(20, 137, 167);
+  font-size: 18px;
+}
+.contacts-i {
+  margin-top: 2px;
+  margin-left: 6px;
 }
 a {
   color: black;
 }
-@media only screen and (min-width: 600px) {
-  .parts {
-    margin-left: 27%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .parts {
-    margin-left: 15%;
-  }
+.header-contact {
+  font-size: 250%;
+  margin-top: 70px;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
 }

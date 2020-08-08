@@ -8,7 +8,7 @@ const ContactUs = () => {
   return (
     <>
       <CustomNavbar />
-      <h1 className="header-tips ml-5">WebWinners Driving School</h1>
+      <h1 className="header-contact">WebWinners Driving School</h1>
       <Row xs={10} className="justify-content-center m-5">
         <iframe
           scrolling="no"

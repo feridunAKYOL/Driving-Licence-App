@@ -105,13 +105,18 @@ export default class formComment extends Component {
             />
           </div>
           <div className="form-group">
-            <input
+            <label for="exampleFormControlSelect1">Type</label>
+            <select
               onChange={this.handleFieldChange}
               value={this.state.comment.type}
               className="form-control"
               placeholder="Type"
               name="type"
-            />
+              id="exampleFormControlSelect1"
+            >
+              <option>Question</option>
+              <option>Comment</option>
+            </select>
           </div>
 
           <div className="form-group">
@@ -128,7 +133,7 @@ export default class formComment extends Component {
           {this.renderError()}
 
           <div className="form-group">
-            <button disabled={this.state.loading} className="btn btn-success">
+            <button disabled={this.state.loading} className="btn btn-info">
               Comment &#10148;
             </button>
           </div>

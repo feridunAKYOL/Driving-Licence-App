@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Row, Col, Container, Image } from "react-bootstrap";
 
 import CommentList from "./ListComment";
 import CommentForm from "./formComment";
@@ -48,25 +49,33 @@ class CommentApp extends Component {
   }
   render() {
     return (
-      <div className="App container bg-light shadow">
-        <header className="App-header">
-          <h2 className="App-title">Comments</h2>
-        </header>
-
-        <div className="row">
-          <div className="col-11  pt-3 ">
+      <Container
+        fluid
+        id="comment-part"
+        className="App  shadow mt-5"
+        maxHeight="80%"
+        overflow="scroll"
+      >
+        <Row>
+          <Col xs={{ span: 4, offset: 2 }}>
+            <h2 className="comment-head" style={{ marginTop: "100px" }}>
+              Comments
+            </h2>
+          </Col>
+          <Col xs={{ span: 8, offset: 2 }} className="pt-3 ">
             <h6>Leave your comment or feedback here</h6>
+          </Col>
+          <Col xs={{ span: 8, offset: 2 }}>
             <CommentForm addComment={this.addComment} />
-
-            <div className="col-20  pt-5 bg-white">
-              <CommentList
-                loading={this.state.loading}
-                comments={this.state.comments}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+          <Col xs={{ span: 8, offset: 2 }} className="pt-5 bg-white">
+            <CommentList
+              loading={this.state.loading}
+              comments={this.state.comments}
+            />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

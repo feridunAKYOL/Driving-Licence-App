@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CustomNavbar from "../home/CustomNavbar";
 import Footer from "../home/Footer";
@@ -26,9 +26,10 @@ const Tests = () => {
   return (
     <>
       <CustomNavbar />
-      <Jumbotron fluid className="tests-part mt-5">
+      <Container fluid className="tests-part mt-5">
         <Col
           xs={{ span: 9, offset: 1 }}
+          sm={{ span: 7, offset: 2 }}
           md={{ span: 4, offset: 4 }}
           className="middle text-center"
         >
@@ -44,11 +45,17 @@ const Tests = () => {
         </Col>
         <Row className="image-part p-4">
           {fileNames.map((obj, id) => (
-            <Col key={id} xs={5} md={3} lg={2} className="m-4 p-1">
+            <Col key={id} xs={8} md={5} lg={3}  className="m-2 p-1">
               <Row className="justify-content-center">
-                <p className="file-name"> {obj.filename} Test</p>
+                <Col>
+                <p >
+                  {" "}
+                  {obj.filename} Test
+                </p>
+                </Col>
               </Row>
               <Row className="justify-content-center">
+                <Col>
                 <Link
                   to={{
                     pathname: "/freetest",
@@ -61,17 +68,17 @@ const Tests = () => {
                   <Image
                     key={id}
                     src={obj.filePath}
-                    width="300px"
-                    className=""
+                    width="100%"
                     rounded
                   />{" "}
                 </Link>
+                </Col>
               </Row>
             </Col>
           ))}
         </Row>
-        <Footer style={{ backgroundColor: "red" }} />
-      </Jumbotron>
+      </Container>
+      <Footer />
     </>
   );
 };

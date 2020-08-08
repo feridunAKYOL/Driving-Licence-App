@@ -71,7 +71,7 @@ class CustomNavbar extends Component {
           className="mb-5"
         >
           <Navbar.Brand href="/" active="true">
-            <Image src="/assets/logo2.png" height="50vh" width="50vw" />
+            <Image src="/assets/logof.png" height="50vh" width="50vw" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -81,7 +81,7 @@ class CustomNavbar extends Component {
               <Nav.Link href="/tests">Take Tests</Nav.Link>
               <Nav.Link href="/contactUs">Contact Us</Nav.Link>
             </Nav>
-            <h2 style={{color:"white"}}>
+            <h2 style={{ color: "white" }}>
               <Badge color="primary" style={{ textTransform: "capitalize" }}>
                 {" "}
                 Welcome {account.username}
@@ -123,9 +123,21 @@ class CustomNavbar extends Component {
                 value={this.username}
                 placeholder="User Name"
                 className="mr-sm-2"
-                onChange={this.onChange} required />
-              <FormControl type="password" name="password" value={this.password} placeholder="Password" className="mr-sm-2" onChange={this.onChange} required />
-              <Button variant="secondary" onClick={this.login}>Log In</Button>
+                onChange={this.onChange}
+                required
+              />
+              <FormControl
+                type="password"
+                name="password"
+                value={this.password}
+                placeholder="Password"
+                className="mr-sm-2"
+                onChange={this.onChange}
+                required
+              />
+              <Button variant="secondary" onClick={this.login}>
+                Log In
+              </Button>
             </Form>
             <Signup />
           </Navbar.Collapse>

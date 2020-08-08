@@ -56,7 +56,9 @@ const DrivingTips = () => {
           <Col className="text-part order4" xs={12} md={6}>
             <Row>
               <Col>
-                <h4>Danger, disadvantage and unnecessary disadvantage</h4>
+                <p className="sub-header-tips">
+                  Danger, disadvantage and unnecessary disadvantage
+                </p>
               </Col>
             </Row>
             <Row>
@@ -83,7 +85,7 @@ const DrivingTips = () => {
           <Col className="text-part order6" xs={12} md={6}>
             <Row>
               <Col>
-                <h4>Duties</h4>
+                <p className="sub-header-tips">Duties</p>
               </Col>
             </Row>
             <Row className="pl-5">
@@ -125,7 +127,7 @@ const DrivingTips = () => {
           <Col className="text-part order8" xs={12} md={6}>
             <Row>
               <Col>
-                <h4>Speed Restrictions</h4>
+                <p className="sub-header-tips">Speed Restrictions</p>
               </Col>
             </Row>
             <Row>

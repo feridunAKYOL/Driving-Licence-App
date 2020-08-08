@@ -14,7 +14,7 @@ const ResultsNavbar = () => {
       variant="dark"
     >
       <Navbar.Brand href="/" active>
-        <Image src="/assets/logo2.png" height="50vh" width="50vw" />
+        <Image src="/assets/logof.png" height="50vh" width="50vw" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

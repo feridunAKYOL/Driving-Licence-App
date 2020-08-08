@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar, Nav, Button, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const token = localStorage.getItem("token");
+
 const ResultsNavbar = () => {
   return (
     <Navbar
@@ -19,7 +21,8 @@ const ResultsNavbar = () => {
         <Nav className="mr-auto">
           <Nav.Link href="/tutorials">Tutorials</Nav.Link>
           <Nav.Link href="/drivingTips">Driving Tips</Nav.Link>
-          <Nav.Link href="/tests">Take Tests</Nav.Link>
+          {/* <Nav.Link href="/tests">Take Tests</Nav.Link> */}
+          {token != null ? <Nav.Link href="/tests">Take Tests</Nav.Link> : ''}
           <Nav.Link href="/contactUs">Contact Us</Nav.Link>
         </Nav>
         <Navbar.Brand href="/freetest">

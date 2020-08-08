@@ -12,6 +12,7 @@ import { Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./LoginComponent";
 import Signup from "../SignUp/SignUp";
+import userImage from "../comment/user-default.png";
 
 class CustomNavbar extends Component {
   constructor() {
@@ -84,9 +85,15 @@ class CustomNavbar extends Component {
             <h2 style={{color:"white"}}>
               <Badge color="primary" style={{ textTransform: "capitalize" }}>
                 {" "}
-                Welcome {account.username} 🖥 
+                Welcome {account.username}
               </Badge>
-            </h2>
+            </h2>      <img
+                    className="mr-3 bg-light rounded"
+                    width="48"
+                    src={userImage}
+                    height="48"
+                    alt={'profile'}
+                  />
             <Button variant="danger" href="/logout">
               logout
             </Button>

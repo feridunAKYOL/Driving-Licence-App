@@ -38,10 +38,12 @@ This is a fullstack app. This app for our graduation project from HackYourFuture
 - Frontend
   - HTML5
   - CSS3
+  - JavaScript
   - React
   - BootStrap
   - React BootStrap
 - Backend
+  - JavaScript
   - NodeJS
   - ExpressJS
   - JWT

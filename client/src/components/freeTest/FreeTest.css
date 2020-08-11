@@ -47,6 +47,7 @@ label {
 }
 .questions-text {
   font-size: 1.3em;
+  text-align: justify;
 }
 .check-box {
   background-color: #dde7f3;

@@ -87,13 +87,14 @@ class CustomNavbar extends Component {
                 {" "}
                 Welcome {account.username}
               </Badge>
-            </h2>      <img
-                    className="mr-3 bg-light rounded"
-                    width="48"
-                    src={userImage}
-                    height="48"
-                    alt={'profile'}
-                  />
+            </h2>{" "}
+            <img
+              className="mr-3 bg-light rounded"
+              width="48"
+              src={userImage}
+              height="48"
+              alt={"profile"}
+            />
             <Button variant="danger" href="/logout">
               logout
             </Button>
@@ -142,12 +143,14 @@ class CustomNavbar extends Component {
                 onChange={this.onChange}
                 required
               />
-              <Button variant="secondary" onClick={this.login}>
+              <Button variant="secondary" className= "auth-Button" onClick={this.login}>
                 Log In
               </Button>
+              <Button variant="secondary" className="auth-Button" href="/signup">
+                {" "}
+                ☞ Register
+              </Button>
             </Form>
-            <a href="/signup" style={{color: "white"
-            }}>☞ Register</a>
           </Navbar.Collapse>
         </Navbar>
       );

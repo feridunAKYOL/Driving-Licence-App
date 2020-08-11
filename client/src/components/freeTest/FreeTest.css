@@ -69,6 +69,10 @@ label {
   .check-box {
     margin-left: 0;
   }
+  .cursor {
+    cursor: pointer;
+  }
+  
   .next-image {
     width: 90px;
   }

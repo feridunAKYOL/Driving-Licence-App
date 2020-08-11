@@ -154,14 +154,14 @@ const FreeTest = (props) => {
                   className="form-check form-check-inline check-box pl-1"
                 >
                   <input
-                    className="form-check-input"
+                    className="form-check-input cursor"
                     type="radio"
                     name={id}
                     id={`"inlineRadio${question.questionId}"`}
                     value="option1"
                     onChange={() => getAnswer(question.questionId, 1)}
                   />
-                  <label className="form-check-label" for={`"inlineRadio${question.questionId}"`}>
+                  <label className="form-check-label cursor" for={`"inlineRadio${question.questionId}"`}>
                     Yes
                   </label>
                 </Col>
@@ -171,14 +171,14 @@ const FreeTest = (props) => {
                   className="form-check form-check-inline check-box pl-1"
                 >
                   <input
-                    className="form-check-input"
+                    className="form-check-input cursor"
                     type="radio"
                     name={id}
                     id={`"inlineRadio${question.questionId}1"`}
                     value="option2"
                     onChange={() => getAnswer(question.questionId, 2)}
                   />
-                  <label className="form-check-label" for={`"inlineRadio${question.questionId}1"`}>
+                  <label className="form-check-label cursor" for={`"inlineRadio${question.questionId}1"`}>
                     No
                   </label>
                 </Col>

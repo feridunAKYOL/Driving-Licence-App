@@ -1,5 +1,7 @@
 .contact-part {
   margin-bottom: 35px;
+  min-height: 100%;
+  position: relative;
 }
 .contacts,
 .contacts-i {

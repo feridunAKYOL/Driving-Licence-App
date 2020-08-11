@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Image, Row, Col, Container, Button } from "react-bootstrap";
+import { Image, Row, Col, Container } from "react-bootstrap";
 import "./FreeTest.css";
 import TestNavbar from "./TestNavbar";
+import Footer from "../home/Footer";
 
 const FreeTest = (props) => {
   const [situationNumber, setSituationNumber] = useState(1);
@@ -20,7 +21,7 @@ const FreeTest = (props) => {
           window.localStorage.getItem("userAnswer")
         );
         setUserAnswer(answer_in_storage);
-        let isAnswered_before = userAnswer.filter(
+        let isAnswered_before = answer_in_storage.filter(
           (el) => el.questionId === idx
         );
         if (isAnswered_before.length === 0) {
@@ -32,9 +33,9 @@ const FreeTest = (props) => {
           });
           let aa = usr_answer;
           setUserAnswer(aa);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(usr_answer));
         } else {
-          let usr_answer = userAnswer.slice();
+          let usr_answer = isAnswered_before.slice();
           let changedAnswer = usr_answer.filter((el) => el.questionId !== idx);
           changedAnswer.push({
             questionId: idx,
@@ -42,7 +43,7 @@ const FreeTest = (props) => {
             situationId: situationNumber,
           });
           setUserAnswer(changedAnswer);
-          window.localStorage.setItem("userAnswer", JSON.stringify(userAnswer));
+          window.localStorage.setItem("userAnswer", JSON.stringify(changedAnswer));
         }
         console.log(userAnswer);
       } else {
@@ -111,7 +112,7 @@ const FreeTest = (props) => {
       <TestNavbar situationNo={situationNumber} testLength={testLength} />
       <Container className="free-test" align="center">
         <Row className="test-part">
-          <Col xs={8} md={9}>
+          <Col xs={12}>
             {fileNames
               .filter(
                 (el) =>
@@ -119,24 +120,26 @@ const FreeTest = (props) => {
                   el.testName === test
               )
               .map((img) => (
-                <Row className="test-part">
+                <div className="test-part ">
                   <Image
                     src={img.fileRelativePath} //{situation_img.image}
                     rounded
                     className="image-situation  mb-2"
                     key={img.situationNumber}
                   />
-                </Row>
+                </div>
               ))}
           </Col>
         </Row>
         <Row className="situation">
           {situation.map((text, id) => (
-            <h3 key={id}>{text.situation}</h3>
+            <Col xs={12}>
+              <h3 key={id}>{text.situation}</h3>
+            </Col>
           ))}
         </Row>
         <Row>
-          <Col xs={{ span: 9, offset: 1 }}>
+          <Col xs={{ span: 9, offset: 1 }} md={{ span: 7, offset: 3 }}>
             {questions.map((question, id) => (
               <Row className="question-part" key={question.questionId}>
                 <Col xs={8} className="questions" key={question.questionId}>
@@ -145,7 +148,11 @@ const FreeTest = (props) => {
                   </p>
                 </Col>
 
-                <Col xs={1} className="form-check form-check-inline check-box">
+                <Col
+                  xs={2}
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
+                >
                   <input
                     className="form-check-input"
                     type="radio"
@@ -158,7 +165,11 @@ const FreeTest = (props) => {
                     Yes
                   </label>
                 </Col>
-                <Col xs={1} className="form-check form-check-inline check-box">
+                <Col
+                  xs={2}
+                  lg={1}
+                  className="form-check form-check-inline check-box pl-1"
+                >
                   <input
                     className="form-check-input"
                     type="radio"
@@ -174,11 +185,12 @@ const FreeTest = (props) => {
               </Row>
             ))}
           </Col>
-          <Col xs={{ span: 2, offset: 0 }} className="next ">
-            <Image src="/assets/nextt.png" onClick={() => goToNext()}></Image>
+          <Col xs={2} md={2} className="next" onClick={() => goToNext()}>
+            <Image src="/assets/nextt.png" className="next-image"></Image>
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };

@@ -54,7 +54,7 @@ const DrivingTips = () => {
             <Image src="/assets/danger.jpg" width="100%" height="90%" />
           </Col>
           <Col className="text-part order4" xs={12} md={6}>
-            <Row>
+            <Row className="position-header">
               <Col>
                 <p className="sub-header-tips">
                   Danger, disadvantage and unnecessary disadvantage
@@ -83,7 +83,7 @@ const DrivingTips = () => {
 
         <Row className="first-part third">
           <Col className="text-part order6" xs={12} md={6}>
-            <Row>
+            <Row className="position-header">
               <Col>
                 <p className="sub-header-tips">Duties</p>
               </Col>
@@ -125,7 +125,7 @@ const DrivingTips = () => {
             />
           </Col>
           <Col className="text-part order8" xs={12} md={6}>
-            <Row>
+            <Row className="position-header">
               <Col>
                 <p className="sub-header-tips">Speed Restrictions</p>
               </Col>
